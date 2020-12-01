@@ -1,0 +1,48 @@
+﻿@using System.IO;
+@model Rybcansky_Shop.Models.Picture
+<!--<div>
+    <h4>Picture</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.order)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.order)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.path)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.path)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>-->
+
+
+<table class="table">
+    <tr>
+        <th>Název</th>
+        <th>path</th>
+        <th>Obrázek</th>
+    </tr>
+
+    <tr>
+        <td>@this.ViewBag.Item.name</td>
+        <td>@this.ViewBag.Item.path</td>
+        <td>
+            <img src="@Convert.ToString("/images/" + this.ViewBag.Item.path)" alt="@this.ViewBag.name" />
+
+        </td>
+    </tr>
+</table>

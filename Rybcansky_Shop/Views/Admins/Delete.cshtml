@@ -1,0 +1,24 @@
+﻿@model Rybcansky_Shop.Models.Admin
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Opravdu chcete smazat tohoto admina?</h3>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.username)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Smazat" class="btn btn-danger" /> |
+        <a asp-action="Index">Zpátky na seznam adminů</a>
+    </form>
+</div>

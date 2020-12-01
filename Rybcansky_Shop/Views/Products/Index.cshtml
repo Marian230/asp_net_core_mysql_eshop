@@ -1,0 +1,25 @@
+﻿<a asp-controller="Products" asp-action="Create" class="btn btn-primary">Vytvořit nový Produkt</a>
+
+<table class="table">
+    <tr>
+        <th>Název</th>
+        <th>Standartní cena</th>
+        <th>Slevněná cena</th>
+        <th>Daň z přidané hodnoty</th>
+    </tr>
+
+    @foreach (Product product in this.ViewBag.Items)
+     {
+        <tr>
+            <td>@product.name</td>
+            <td>@product.price_Standart</td>
+            <td>@product.price_Discount</td>
+            <td>@product.vat_rate %</td>
+            <td><a asp-controller="Products" asp-action="Detail" asp-route-id="@product.id">Zobrazit</a></td>
+            <td><a asp-controller="Products" asp-action="Edit" asp-route-id="@product.id">Upravit</a></td>
+            <td><a asp-controller="Products" asp-action="Delete" asp-route-id="@product.id">Smazat</a></td>
+            <td><a asp-controller="Variants" asp-action="CreateFromId" asp-route-id="@product.id">Varianty</a></td>
+            <td><a asp-controller="Pictures" asp-action="CreateFromId" asp-route-id="@product.id">Obrázky</a></td>
+        </tr>
+     }
+</table>

@@ -1,0 +1,9 @@
+﻿
+<div class="row">
+    @foreach (Product item in this.ViewBag.Products)
+    {
+        <div class="col-sm-3">
+            <vc:product-component product="@item"></vc:product-component>
+        </div>
+    }
+</div>

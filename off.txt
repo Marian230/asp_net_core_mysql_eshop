@@ -1,0 +1,26 @@
+            <h3>Standart drop down</h3>
+            <div class="form__field field">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script>
+                        $(document).ready(function () {
+                            $("#category_set").change(function () {
+                                var displayCategoryName = document.getElementById("category_set");
+                                ViewBag.category_set = document.getElementById("category_set").options[displayCategoryName.selectedIndex].value;
+                                alert("vybraná kategorie je: " + @ViewBag.category_set + " &  název kategorie: " + displayCategoryName.options[displayCategoryName.selectedIndex].text);
+                            });
+                        });
+                        $(document).ready(function () {
+                            $("#vendor_set").change(function () {
+                                var displayCategoryName = document.getElementById("vendor_set");
+                                alert("vybraný výrobce je: " + displayCategoryName.options[displayCategoryName.selectedIndex].value + " &  název výrobce : " + displayCategoryName.options[displayCategoryName.selectedIndex].text);
+                            });
+                        });
+                </script>
+                <select asp-for="name" asp-items="this.ViewBag.CategoryQuery" id="category_set"></select>
+                <span class="field__validation-message" asp-validation-for="name"></span>
+            </div>
+            <div class="form__field field">
+                <select asp-for="name" asp-items="this.ViewBag.VendorQuery" id="vendor_set"></select>
+                <span class="field__validation-message" asp-validation-for="name"></span>
+            <h3>Standart drop down</h3>
+            </div>

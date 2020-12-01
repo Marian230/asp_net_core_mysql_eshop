@@ -1,0 +1,25 @@
+﻿<a asp-action="Index" asp-controller="Products" class="btn btn-info">Zpátky na seznam produktů</a>
+<a asp-controller="Pictures" asp-action="Create" class="btn btn-primary">Vytvořit nový obrázek</a>
+
+<table class="table">
+    <tr>
+        <th>Název</th>
+        <th>Cesta</th>
+        <th>Order</th>
+        <th>id</th>
+    </tr>
+
+    @foreach (Picture picture in this.ViewBag.Items)
+    {
+        <tr>
+            <td>@picture.name</td>
+            <td>@picture.path</td>
+            <td>@picture.order</td>
+            <td>@picture.id</td>
+            <td><a asp-controller="Pictures" asp-action="Detail" asp-route-id="@picture.id">Zobrazit</a></td>
+            <td><a asp-controller="Pictures" asp-action="Edit" asp-route-id="@picture.id">Upravit</a></td>
+            <td><a asp-controller="Pictures" asp-action="Delete" asp-route-id="@picture.id">Smazat</a></td>
+        </tr>
+    }
+</table>
+<a>@this.ViewBag.id</a>

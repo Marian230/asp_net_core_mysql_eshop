@@ -1,0 +1,58 @@
+﻿@model Rybcansky_Shop.Models.Cart_Item
+
+<div class="row">
+    <div class="card col-8" style="width: 1000px">
+        <div class="mx-3 my-3">
+            <h1>@this.ViewBag.Product.name</h1>
+
+            @if (@ViewBag.Product.price_Discount == null)
+            {
+                <div class="">
+                    <h2 class="card-text text-danger">@ViewBag.Product.price_Standart Kč</h2>
+                    <p></p>
+                </div>
+            }
+            else
+            {
+                <div class="">
+                    <h2 class="card-text text-danger">@ViewBag.Product.price_Discount Kč</h2>
+                    <p class="card-text"><s>@ViewBag.Product.price_Standart Kč</s></p>
+                </div>
+            }
+
+            <p>Prodejce: @this.ViewBag.Vendor.name</p>
+            <p>Dostupnost: 5 ks</p>
+            <hr />
+
+            <p>@this.ViewBag.Product.description</p>
+
+            <hr />
+
+            <div class="row footer">
+                <form asp-action="Create" asp-controller="Cart" class="form-inline">
+                    <div class="col">
+                        <label>Počet:</label>
+                    </div>
+                    <div class="col">
+                        <input asp-for="quantity" type="number" class="input-sm" style="height: 100%" value="1"/> ks
+                        <input asp-for="id_Cart" value="@this.ViewBag.Cart.id" hidden/>
+
+                        <select asp-for="id_Product_Variant">
+                            @foreach (Variant item in this.ViewBag.Variants)
+                            {
+                                <option value="@item.id">@item.color</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-danger" type="submit">Přidat do košíku</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card col-4">
+        <img src="@Convert.ToString("/images/" + this.ViewBag.Picture.path)" alt="Alternate Text" style="width: 100%; height: 555px;  object-fit: scale-down;" class="m-0" />
+    </div>
+</div>  

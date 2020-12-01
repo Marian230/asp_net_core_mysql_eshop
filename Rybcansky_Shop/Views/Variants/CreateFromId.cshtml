@@ -1,0 +1,25 @@
+﻿<a asp-action="Index" asp-controller="Products" class="btn btn-info">Zpátky na seznam produktů</a>
+<a asp-controller="Variants" asp-action="Create" class="btn btn-primary">Vytvořit novou variantu</a>
+
+<table class="table">
+    <tr>
+        <th>Název</th>
+        <th>cena</th>
+        <th>cena po slevě</th>
+        <th>jednotek na skladě</th>
+    </tr>
+
+    @foreach (Variant variant in this.ViewBag.Items)
+    {
+        <tr>
+            <td>@variant.color</td>
+            <td>@variant.price_Standart</td>
+            <td>@variant.price_Discount</td>
+            <td>@variant.stock_Number</td>
+            <td><a asp-controller="Variants" asp-action="Detail" asp-route-id="@variant.id">Zobrazit</a></td>
+            <td><a asp-controller="Variants" asp-action="Edit" asp-route-id="@variant.id">Upravit</a></td>
+            <td><a asp-controller="Variants" asp-action="Delete" asp-route-id="@variant.id">Smazat</a></td>
+        </tr>
+    }
+</table>
+<a>@this.ViewBag.id</a>

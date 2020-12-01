@@ -1,0 +1,25 @@
+﻿<a asp-controller="Products" asp-action="Create" class="btn btn-primary">Vytvořit nový článek</a>
+
+<table class="table">
+    <tr>
+        <th>Název</th>
+        <th>Standartní cena</th>
+        <th>Slevněná cena</th>
+        <th>Daň z přidané hodnoty</th>
+        <th>// TODO počet variant</th>
+        <th>// TODO počet kusů</th>
+        <th>// TODO kategorie</th>
+        <th>// TODO výrobce</th>
+    </tr>
+
+    <tr>
+        <td>@this.ViewBag.Item.name</td>
+        <td>@this.ViewBag.Item.price_Standart</td>
+        <td>@this.ViewBag.Item.price_Discount</td>
+        <td>@this.ViewBag.Item.vat_rate %</td>
+        <td>varianty</td>
+        <td>kusy </td>
+        <td>kategorie</td>
+        <td>výrobce</td>
+    </tr>
+</table>

@@ -1,0 +1,88 @@
+﻿@model Rybcansky_Shop.Models.Product
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="price_Standart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="price_Standart" class="control-label"></label>
+                <input asp-for="price_Standart" class="form-control" />
+                <span asp-validation-for="price_Discount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="price_Discount" class="control-label"></label>
+                <input asp-for="price_Discount" class="form-control" />
+                <span asp-validation-for="price_Discount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vat_rate" class="control-label"></label>
+                <input asp-for="vat_rate" class="form-control" />
+                <span asp-validation-for="vat_rate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="time" class="control-label"></label>
+                <input asp-for="time" class="form-control" />
+                <span asp-validation-for="time" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="variant_Number" class="control-label"></label>
+                <input asp-for="variant_Number" class="form-control" />
+                <span asp-validation-for="variant_Number" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="stock_Number" class="control-label"></label>
+                <input asp-for="stock_Number" class="form-control" />
+                <span asp-validation-for="stock_Number" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Kategorie</label>
+                <select class="form-control" asp-for="id_Category">
+                    @foreach (Category category in this.ViewBag.CategoryQuery)
+                     {
+                        <option value="@category.id">@category.id - @category.name</option>
+                     }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Prodejce</label>
+                <select class="form-control" asp-for="id_Vendor">
+                    @foreach (Vendor vendor in this.ViewBag.VendorQuery)
+                     {
+                        <option value="@vendor.id">@vendor.id - @vendor.name</option>
+                     }
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

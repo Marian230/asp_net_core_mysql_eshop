@@ -1,0 +1,93 @@
+﻿@model Rybcansky_Shop.Models.Product
+@using Rybcansky_Shop.Controllers.ModelController.Product;
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.price_Standart)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.price_Standart)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.price_Discount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.price_Discount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.vat_rate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.vat_rate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class="col-sm-10">
+            @*Html.DisplayFor(model => model.description)*@
+            <textarea readonly style="resize: none">@this.ViewBag.Item.description</textarea>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.time)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.time)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            Varianty
+        </dt>
+        <dd class="col-sm-10">
+            <select>
+                @foreach (VariantClass item in this.ViewBag.VariantQuery)
+                 {
+                     <option>
+                          @item.color |
+                         (@item.price_Standart /
+                          @item.price_Discount) |
+                          ks: @item.stock_Number 
+                     </option>
+                 }
+            </select>
+        </dd>
+
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.stock_Number)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.stock_Number)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Number_Of_Picture)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Number_Of_Picture)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.id_Category)
+        </dt>
+        <dd class="col-sm-10">
+            @*Html.DisplayFor(model => model.id_Category)*@
+            <p>@this.ViewBag.CategoryQuery</p>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.id_Vendor)
+        </dt>
+        <dd class="col-sm-10">
+            @*Html.DisplayFor(model => model.id_Vendor)*@
+            <p>@this.ViewBag.VendorQuery</p>
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = this.ViewBag.Item.id }) |
+    <a asp-action="Index">Back to List</a>
+</div>

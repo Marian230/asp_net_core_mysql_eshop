@@ -1,0 +1,22 @@
+﻿@using Rybcansky_Shop.Controllers.Web.Carts;
+@model Rybcansky_Shop.Models.Cart_Item
+
+<form asp-action="Order">
+    <table class="table">
+        <tr>
+            <td>Název</td>
+            <td>Varianta</td>
+            <td>Počet</td>
+        </tr>
+        @foreach (CartClass item in this.ViewBag.Data)
+        {
+            <tr>
+                <td>@item.productName</td>
+                <td>@item.productVariantName</td>
+                <td>@item.number</td>
+                <td><a asp-controller="Cart" asp-action="Delete" asp-route-id="@item.id">Delete</a></td>
+            </tr>
+        }
+    </table>
+    <input type="submit" class="btn btn-success" value="Objednat"/>
+</form>

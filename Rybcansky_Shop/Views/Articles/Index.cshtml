@@ -1,0 +1,21 @@
+﻿<a asp-controller="Articles" asp-action="Create" class="btn btn-primary">Vytvořit nový článek</a>
+
+<table class="table">
+    <tr>
+        <th>Název článku</th>
+        <th>Autor</th>
+        <th>Datum</th>
+    </tr>
+
+    @foreach (Article article in this.ViewBag.Items)
+     {
+        <tr>
+            <td>@article.header</td>
+            <td>@article.author</td>
+            <td>@article.time.ToLocalTime()</td>
+            <td><a asp-controller="Articles" asp-action="Detail" asp-route-id="@article.id">Zobrazit</a></td>
+            <td><a asp-controller="Articles" asp-action="Edit" asp-route-id="@article.id">Upravit</a></td>
+            <td><a asp-controller="Articles" asp-action="Delete" asp-route-id="@article.id">Smazat</a></td>
+        </tr>
+     }
+</table>

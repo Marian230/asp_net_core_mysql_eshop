@@ -1,0 +1,51 @@
+﻿@model Rybcansky_Shop.Models.Article
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>vytvořit článek</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="author" class="control-label"></label>
+                <input asp-for="author" class="form-control" />
+                <span asp-validation-for="author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="header" class="control-label"></label>
+                <input asp-for="header" class="form-control" />
+                <span asp-validation-for="header" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="text" class="control-label"></label>
+                <textarea asp-for="text" class="form-control" /></textarea>
+                <span asp-validation-for="text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="time" class="control-label"></label>
+                <input asp-for="time" class="form-control" />
+                <span asp-validation-for="time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="id_Picture" class="control-label"></label>
+                <input asp-for="id_Picture" class="form-control" />
+                <span asp-validation-for="id_Picture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Zpátky na seznam článků</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

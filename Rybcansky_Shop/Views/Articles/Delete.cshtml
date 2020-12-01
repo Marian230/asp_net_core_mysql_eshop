@@ -1,0 +1,47 @@
+﻿@model Rybcansky_Shop.Models.Article
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Opravdu chcete smazat tento článek?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.author)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.author)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.header)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.header)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.text)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.text)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.time)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.id_Picture)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.id_Picture)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Smazat" class="btn btn-danger" /> |
+        <a asp-action="Index">Vrátit zpět</a>
+    </form>
+</div>

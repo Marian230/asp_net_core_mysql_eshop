@@ -1,0 +1,16 @@
+﻿<a asp-controller="Shipping_Methods" asp-action="Create" class="btn btn-primary">Vytvořit nový článek</a>
+
+<table class="table">
+    <tr>
+        <th>Název</th>
+    </tr>
+
+    @foreach (Shipping_Method method in this.ViewBag.Items)
+    {
+        <tr>
+            <td>@method.method</td>
+            <td><a asp-controller="Shipping_Methods" asp-action="Edit" asp-route-id="@method.id">Upravit</a></td>
+            <td><a asp-controller="Shipping_Methods" asp-action="Delete" asp-route-id="@method.id">Smazat</a></td>
+        </tr>
+    }
+</table>

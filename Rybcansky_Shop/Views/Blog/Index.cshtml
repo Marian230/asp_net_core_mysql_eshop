@@ -1,0 +1,12 @@
+﻿@using Rybcansky_Shop.Controllers.Web.Blog;
+
+<ul>
+    @foreach (BlogListClass item in this.ViewBag.Data)
+    {
+        <li>
+            <h2>@item.Article.header</h2>
+            <p>@item.Article.author</p>
+            <p>@item.Article.text</p>
+        </li>
+    }
+</ul>

@@ -1,0 +1,32 @@
+kategorie
+	- seznam kategorií
+	- filtrace produktù podle kategorií
+	- administrace - kompletní správa
+
+produkty
+	- obecná definice produktu
+	- minimální parametry - název, popis, cena, sleva, dph, poèet na skladì, ...
+	- produkt patøí do více kategorií
+	- produkt má více obrázkù, jeden primární
+	- administrace - kompletní správa
+		- parametry
+		- zaøazení do kategorií
+		- upload obrázkù
+
+objednávky
+	- pøidání produktù do košíku
+	- vytvoøení objednávky na základì košíku
+	- nákup bez registrace
+	- snížení produktù na skladì po vytvoøení objednávky
+	- administrace objednávek - pouze ètení
+
+kontaktní formuláø
+	- vyplnìní na frontendu
+	- zobrazení zpráv v administraci
+
+blog
+	- seznam èlánkù
+	- detail èlánku
+	- administrace - kompletní správa
+
+	

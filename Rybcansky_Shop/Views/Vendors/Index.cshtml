@@ -1,0 +1,16 @@
+﻿<a asp-controller="Vendors" asp-action="Create" class="btn btn-primary">Vytvořit nový článek</a>
+
+<table class="table">
+    <tr>
+        <th>Název</th>
+    </tr>
+
+    @foreach (Vendor vendor in this.ViewBag.Items)
+    {
+        <tr>
+            <td>@vendor.name</td>
+            <td><a asp-controller="Vendors" asp-action="Edit" asp-route-id="@vendor.id">Upravit</a></td>
+            <td><a asp-controller="Vendors" asp-action="Delete" asp-route-id="@vendor.id">Smazat</a></td>
+        </tr>
+    }
+</table>
