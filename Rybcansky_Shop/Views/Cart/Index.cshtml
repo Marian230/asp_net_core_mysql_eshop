@@ -7,16 +7,20 @@
             <td>Název</td>
             <td>Varianta</td>
             <td>Počet</td>
+            <td>Cena</td>
         </tr>
         @foreach (CartClass item in this.ViewBag.Data)
         {
             <tr>
-                <td>@item.productName</td>
-                <td>@item.productVariantName</td>
-                <td>@item.number</td>
+                <td><img src="@("/images/" + @item.picture)" style=""/></td>
+                <td>@item.ProductName</td>
+                <td>@item.VariantName</td>
+                <td>@item.quantity</td>
+                <td>@((item.variantPriceDiscount == null) ? @item.variantPriceStandart : item.variantPriceDiscount) Kč</td>
                 <td><a asp-controller="Cart" asp-action="Delete" asp-route-id="@item.id">Delete</a></td>
             </tr>
         }
     </table>
+    <p>Cena celkem: @this.ViewBag.Data</p>
     <input type="submit" class="btn btn-success" value="Objednat"/>
 </form>

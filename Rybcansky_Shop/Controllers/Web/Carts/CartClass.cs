@@ -9,10 +9,16 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
     {
         public int id { get; set; }
 
-        public string productName { get; set; }
+        public int quantity { get; set; }
 
-        public string productVariantName { get; set; }
+        public string picture { get; set; }
 
-        public int number { get; set; }
+        public string ProductName { get; set; }
+
+        public string VariantName { get; set; }
+
+        public decimal? variantPriceStandart { get; set; }
+
+        public decimal? variantPriceDiscount { get; set; }
     }
 }

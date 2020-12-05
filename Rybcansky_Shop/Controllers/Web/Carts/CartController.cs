@@ -19,6 +19,23 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
         [HttpPost]
         public  IActionResult Create(Cart_Item item)
         {
+            int? id = null;
+            foreach (var contextItem in this.context.Cart_Item)
+            {
+                if (contextItem.id_Product_Variant == item.id_Product_Variant)
+                {
+                    id = contextItem.id;
+                    break;
+                }
+            }
+
+            if (id != null)
+            {
+                this.context.Cart_Item.Find(id).quantity++;
+                this.context.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+
             this.context.Cart_Item.Add(item);
             this.context.SaveChanges();
 
@@ -36,7 +53,9 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
 
         public IActionResult Order()
         {
-            this.ViewBag.Items = this.context.Cart_Item.ToList();
+            List<CartClass> cartList = this.Query();
+            this.ViewBag.Items = this.context.Cart_Item;
+            this.ViewBag.Price = this.TotalPrice(cartList);
 
             return View();
         }
@@ -46,17 +65,36 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
             var query = (from cartItem in this.context.Cart_Item
                          from variant in this.context.Variant
                          from product in this.context.Product
+                         from picture in this.context.Picture
+                         from productPicture in this.context.ProductPicture
+                         where productPicture.id_Product == product.id
+                         where picture.id == productPicture.id_Picture
+                         where picture.order == 0
                          where cartItem.id_Product_Variant == variant.id
                          where variant.id_Product == product.id
                          select new CartClass()
                          {
-                             productName = product.name,
-                             productVariantName = variant.color,
-                             number = cartItem.quantity,
-                             id = cartItem.id
+                             id = cartItem.id,
+                             quantity = cartItem.quantity,
+                             picture = picture.path,
+                             ProductName = product.name,
+                             VariantName = variant.color,
+                             variantPriceStandart = variant.price_Standart,
+                             variantPriceDiscount = variant.price_Discount
                          }).ToList();
 
             return query;
+        }
+
+        private int TotalPrice(List<CartClass> list)
+        {
+            int totalPrice = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+
+            }
+
+            return totalPrice;
         }
     }
 }

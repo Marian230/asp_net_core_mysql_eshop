@@ -1,6 +1,6 @@
 ﻿<a href="@Url.Action("Index", "Product", new { id = this.ViewBag.Product.id })">
     <div class="card">
-        <img class="card-img-top img-fluid" src="@Convert.ToString("/images/" + this.ViewBag.Picture.path)" alt="Card image cap" style="width: 300px; height: 300px; object-fit: scale-down;">
+        <img class="card-img-top img-fluid" src="@("/images/" + this.ViewBag.Picture.path)" alt="Card image cap" style="width: 300px; height: 300px; object-fit: scale-down;">
         <div class="card-body">
             <h5 class="card-title text-center">
                 @ViewBag.Product.name
