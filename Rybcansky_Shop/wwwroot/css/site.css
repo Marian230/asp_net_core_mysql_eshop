@@ -1,71 +1,319 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap%27');
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+:root {
+    font-family: 'Lato', sans-serif;
+    --myPink: #ff9999;
+    --lightPink: #ffadad;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+* {
+    box-sizing: border-box;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.08em;
+    text-align: center;
+    line-height: 1.5
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+
+/* Header */
+header .debra-bar {
+    background-color: var(--myPink);
+    padding: 1em 0.5em;
+    color: white;
+}
+
+    header .debra-bar .top-line {
+        text-align: left;
+        padding-bottom: 0.1em;
+    }
+
+header .follow-us > * {
+    display: inline;
+    margin: 0 0.3em;
+    height: 1em;
+    vertical-align: middle;
+}
+
+header .follow-us img {
+    filter: invert();
+    display: inline;
+}
+
+.follow-us:first-child {
+    margin-left: 0;
+}
+
+.cart {
+    height: 3em;
+    width: 4.2em;
+    padding: 0.3em;
+
+    border: 2px solid var(--lightPink);
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.4s;
+}
+.cart:hover {
+    background: white;
+}
+    .cart:hover #cart-number {
+        border-color: var(--lightPink);
+        background-color: var(--lightPink);
+        color: white;
+    }
+    .cart:hover img {
+        filter: unset;
+        
+    }
+
+    .cart img {
+        max-width: 100%;
+        max-height: 100%;
+        padding: 0.3em 0;
+        filter: invert();
+        transition: 0.25s
+    }
+    .cart #cart-number {
+        border: 2px solid white;
+        background: white;
+        border-radius: 50%;
+        color: black;
+        font-size: 0.75rem;
+        text-align: center;
+        margin: auto 0;
+        transition: 0.2s;
+        min-width: 2em;
+    }
+
+header hr {
+    border-color: #ffa6a6;
+    background-color: #ffa6a6;
+    border: 0;
+    height: 1px;
+}
+
+header .bottom-line {
+    padding: 0.7em 0;
+    display: flex;
+    justify-content: space-between;
+    height: 4.5em;
+}
+
+    header .bottom-line p {
+        font-size: 2.3rem;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    header .bottom-line .search-bar {
+        background-color: #ffa6a6;
+        border-radius: 7px;
+        width: 60%;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1em;
+    }
+
+        header .bottom-line .search-bar input {
+            border: none;
+            background: none;
+            color: white;
+            flex-grow: 1;
+            padding: 0;
+        }
+
+            header .bottom-line .search-bar input::placeholder {
+                color: white;
+            }
+
+
+        header .bottom-line .search-bar .lupa {
+            width: 3em;
+            height: 3em;
+        }
+
+        header .bottom-line .search-bar img {
+            width: 100%;
+            height: 100%;
+            padding: 0.6em;
+            filter: invert();
+        }
+
+    header .bottom-line input:focus {
+        outline: none;
+    }
+
+header nav {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 36em) 1fr;
+    padding: 1em;
+}
+
+    header nav ul {
+        grid-column: 2/3;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        header nav ul li a {
+            color: black;
+            font-weight: bold;
+        }
+
+
+header a {
+    color: white;
+}
+
+
+
+
+
+
+main .stolen-image {
+    width: 100%;
+}
+
+.random-radek {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 1em;
+}
+
+    .random-radek .random-item {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 2em 2em;
+        height: 4em;
+
+        font-size: 0.9rem;
+        text-align: left;
+    }
+
+        .random-radek .random-item img {
+            max-height: 100%;
+            max-width: 100%;
+            grid-row: 1/3;
+            grid-column: 1/2;
+        }
+
+        .random-radek .random-item h3 {
+            margin: 0;
+            padding: 0;
+            color: var(--myPink);
+            font-weight: bold;
+            font-size: 1.2rem;
+            grid-row: 1/2;
+            grid-column: 2/3;
+        }
+
+        .random-radek .random-item p {
+            grid-row: 2/3;
+            grid-column: 2/3;
+        }
+
+h2 {
+    margin: 0.8em;
+    padding: 0;
+}
+
+.sortbox {
+    padding: 1em;
+}
+
+    .sortbox h3 {
+        display: inline;
+        margin: 1em;
+        font-size: 1.2rem;
+        font-weight: normal;
+    }
+    .sortbox h3 a {
+        color: black;
+        transition: .1s;
+    } 
+        .sortbox h3 a:hover {
+            color: var(--myPink);
+        }
+
+
+/* Products */
+.product {
+    max-width: 25%;
+    padding: 0 0.8em;
+    padding-bottom: 01em;
+}
+.product img {
+    max-width: 100%;
+}
+    .product .product-body {
+        border-width: 0px 2px 2px 2px;
+        border-color: #f2f2f2;
+        border-style: solid;
+        color: black;
+        text-align: left;
+        padding: 1em;
+    }
+    .product p {
+        font-size: 1.2rem;
+        color: #818181;
+        letter-spacing: 1px;
+    }
+    .product .stars {
+        padding: 0.5em 0;
+    }
+    .product .price {
+        display: inline;
+        color: var(--myPink);
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    .product .prev-price {
+        display: inline;
+        text-decoration: line-through;
+        color: #868686;
+        margin-left: 0.8em;
+        font-size: 1rem;
+    }
+
+
+
+
+
+    @media(min-width:800px) {
+        .grid {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 34em)) 1fr
+    }
+
+    .content-wrap {
+        grid-column: 2/4;
+    }
+
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
 }

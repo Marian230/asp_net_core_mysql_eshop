@@ -1,26 +1,23 @@
-﻿<a href="@Url.Action("Index", "Product", new { id = this.ViewBag.Product.id })">
-    <div class="card">
-        <img class="card-img-top img-fluid" src="@("/images/" + this.ViewBag.Picture.path)" alt="Card image cap" style="width: 300px; height: 300px; object-fit: scale-down;">
-        <div class="card-body">
-            <h5 class="card-title text-center">
-                @ViewBag.Product.name
-            </h5>
-            <div>
-                @if (@ViewBag.Product.price_Discount == null)
-                {
-                    <div class="text-center">
-                        <p class="card-text text-success">@ViewBag.Product.price_Standart Kč</p>
-                        <p></p>
-                    </div>
-                }
-                else
-                {
-                    <div class="d-flex justify-content-around">
-                        <p class="card-text text-danger"><s>@ViewBag.Product.price_Standart Kč</s></p>
-                        <p class="card-text text-success">@ViewBag.Product.price_Discount Kč</p>
-                    </div>
-                }
-            </div>
+﻿<a class="product" href="@Url.Action("Index", "Product", new { id = this.ViewBag.Product.id })">
+
+    <img src="@("/images/" + this.ViewBag.Picture.path)" alt="Card image cap">
+
+    <div class="product-body">
+        <p>
+            @ViewBag.Product.name
+        </p>
+        <div class="stars">
+            lmao hvezdicky
         </div>
+        @if (@ViewBag.Product.price_Discount == null)
+        {
+            <p class="price">@ViewBag.Product.price_Standart Kč</p>
+        }
+        else
+        {
+            <p class="price">@ViewBag.Product.price_Discount Kč</p>
+
+            <p class="prev-price">@ViewBag.Product.price_Standart Kč</p>
+        }
     </div>
 </a>

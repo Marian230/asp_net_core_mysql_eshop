@@ -1,9 +1,48 @@
-﻿
-<div class="row">
-    @foreach (Product item in this.ViewBag.Products)
-    {
-        <div class="col-sm-3">
-            <vc:product-component product="@item"></vc:product-component>
+﻿<div class="content-wrap">
+    <img class="stolen-image" src="~/images/stolen_fasion_cosmetic.png" alt="Fasion Cosmetic" />
+
+    <div class="random-radek">
+        <div class="random-item">
+            <img src="/images/free_shipping.png" alt="free shipping" />
+            <h3>Free Shipping</h3>
+            <p>Free shipping on order</p>
         </div>
-    }
+        <div class="random-item">
+            <img src="/images/headphones.png" alt="free shipping" />
+            <h3>Support 25/7</h3>
+            <p>Don't contact us 24 hrs a day</p>
+        </div>
+        <div class="random-item">
+            <img src="/images/lock.png" alt="free shipping" />
+            <h3>Payment Secure</h3>
+            <p>This payment is like.. really secure</p>
+        </div>
+    </div>
+
+    <h2>
+        Fuckin' produkty
+    </h2>
+    <div class="sortbox">
+        <h3>
+            <a href="#">Fakt top</a>
+        </h3>
+        <h3>
+            <a href="#">Bezceler</a>
+        </h3>
+        <h3>
+            <a href="#">Nový rivalové</a>
+        </h3>
+    </div>
+
+    <div class="products">
+        @foreach (Product item in this.ViewBag.Products)
+        {
+            <vc:product-component product="@item"></vc:product-component>
+        }
+    </div>
 </div>
+
+
+
+
+
