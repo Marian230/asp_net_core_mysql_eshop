@@ -1,26 +1,28 @@
 ﻿@using Rybcansky_Shop.Controllers.Web.Carts;
 @model Rybcansky_Shop.Models.Cart_Item
+    <div class="cart-bg" alt="background">
+        <h2>KOŠÍK</h2>
+        <p><a asp-controller="Home" asp-action="Index">Home</a>&emsp;>&emsp;Košík</p>
+    </div>
 
-<form asp-action="Order">
-    <table class="table">
-        <tr>
-            <td>Název</td>
-            <td>Varianta</td>
-            <td>Počet</td>
-            <td>Cena</td>
-        </tr>
-        @foreach (CartClass item in this.ViewBag.Data)
-        {
-            <tr>
-                <td><img src="@("/images/" + @item.picture)" style=""/></td>
-                <td>@item.ProductName</td>
-                <td>@item.VariantName</td>
-                <td>@item.quantity</td>
-                <td>@((item.variantPriceDiscount == null) ? @item.variantPriceStandart : item.variantPriceDiscount) Kč</td>
-                <td><a asp-controller="Cart" asp-action="Delete" asp-route-id="@item.id">Delete</a></td>
-            </tr>
-        }
-    </table>
-    <p>Cena celkem: @this.ViewBag.Data</p>
-    <input type="submit" class="btn btn-success" value="Objednat"/>
-</form>
+    <form asp-action="Order" class="content-wrap">
+        <div class="cart-detail">
+            <span>Obrázek</span>
+            <span>Název</span>
+            <span>Varianta</span>
+            <span>Počet</span>
+            <span>Cena</span>
+            <span>Celková cena</span>
+            <span></span>
+            @foreach (CartClass item in this.ViewBag.Data)
+            {
+                <span><img src="@("/images/" + @item.picture)" style="" /></span>
+                <span>@item.ProductName</span>
+                <span>@item.VariantName</span>
+                <span>@item.quantity</span>
+                <span>@((item.variantPriceDiscount == null) ? @item.variantPriceStandart : item.variantPriceDiscount) Kč</span>
+                <span>@(((item.variantPriceDiscount == null) ? @item.variantPriceStandart : item.variantPriceDiscount) * item.quantity) Kč</span>
+                <span><a asp-controller="Cart" asp-action="Delete" asp-route-id="@item.id">×</a></span>
+            }
+        </div>
+    </form>

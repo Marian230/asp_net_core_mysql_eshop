@@ -23,39 +23,35 @@
                 </div>
                 <hr />
                 <div class="bottom-line">
-                    <a href="#"><p>DEBRA</p></a>
+                    <a asp-controller="Home" asp-action="Index"><p>DEBRA</p></a>
                     <div class="search-bar">
                         <input type="text" name="search" placeholder="Vyhledat" />
                         <a class="lupa" asp-area="" asp-controller="Cart" asp-action="Index"><img src="/images/lupa.svg" alt="lupa" /></a>
                     </div>
-
-                    <a class="cart" asp-area="" asp-controller="Cart" asp-action="Index">
-                        <img src="~/images/icons/cart.svg">
-                        <p id="cart-number">33</p>
-                    </a>
+                    <vc:Cart-Title-Component></vc:Cart-Title-Component>
                 </div>
             </div>
 
         </div>
         <nav>
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <ul>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Shop</a>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Shop</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products</a>
+                <li>
+                    <a asp-area="" asp-controller="Product" asp-action="Index">Products</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="Index">Blog</a>
+                <li>
+                    <a asp-area="" asp-controller="Blog" asp-action="Index">Blog</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="Index">About</a>
+                <li>
+                    <a asp-area="" asp-controller="About" asp-action="Index">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
+                <li>
+                    <a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -64,9 +60,81 @@
         @RenderBody()
     </main>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - Rybcansky_Shop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer>
+        <div class="grid">
+            <div class="content-wrap footer-div">
+                <div class="footer-debra">
+                    <img src="~/images/debra-logo.png" alt="debra logo" />
+                    <h5 class="footer-h5">Address:</h5>
+                    <address>
+                        4710-4890 Breckinridge St, UK Burlington, VT 05401
+                    </address>
+                    <h5 class="footer-h5">Need Help?</h5>
+                    <a href="tel:1-800-345-6789">Call: 1-800-345-6789</a>
+                    <h5 class="footer-h5">Email:</h5>
+                    <p><a href="mailto:example@example.com">example@example.com</a></p>
+                </div>
+
+                <div class="footer-about-us">
+                    <h5 class="footer-h">About Us</h5>
+                    <a href="#">About Us</a>
+                    <a href="#">Store location</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Orders tracking</a>
+                </div>
+
+                <div class="footer-usefull-links">
+                    <h5 class="footer-h">Usefull Links</h5>
+                    <a href="#">Returns</a>
+                    <a href="#">Support Policy</a>
+                    <a href="#">Size guide</a>
+                    <a href="#">FAQs</a>
+                </div>
+
+                <div class="footer-latest-blogs">
+                    <h5 class="footer-h">Latest Blogs</h5>
+                    <div class="footer-article">
+                        <div>
+                            <a href="#">
+                                <img src="/images/articles/0_prev.jpg" alt="first article" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <p>Nadpis</p>
+                            </a>
+                            <p><small>by Karel Novák 15 Jan, 20</small></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="footer-article">
+                        <div>
+                            <a href="#">
+                                <img src="~/images/articles/1_prev.jpg" alt="first article" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <p>Další nadpis</p>
+                            </a>
+                            <p><small>by Karel Novák 15 Jan, 20</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="down-hr" />
+
+            <div class="footer-bottom grid">
+                <div>
+                    <p>Copyright &copy; <a href="#">Vesoz</a> All Right Reserved.</p>
+                </div>
+                <div>
+                    <a href="#"><img src="/images/icons/fb_color.png" alt="FB" /></a>
+                    <a href="#"><img src="/images/icons/tw_color.png" alt="TW" /></a>
+                    <a href="#"><img src="/images/icons/gp.png" alt="GP" /></a>
+                    <a href="#"><img src="/images/icons/yt.png" alt="YT" /></a>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

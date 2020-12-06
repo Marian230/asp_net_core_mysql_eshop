@@ -1001,3 +1001,4 @@ C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcore
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Rybcansky_Shop.dll
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Rybcansky_Shop.pdb
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Rybcansky_Shop.genruntimeconfig.cache
+C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CartTitleComponent\Default.cshtml.g.cs
