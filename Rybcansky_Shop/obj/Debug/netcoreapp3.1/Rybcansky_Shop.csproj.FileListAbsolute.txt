@@ -801,7 +801,6 @@ X:\ČTVRŤÁK\PRG\@Projekt\Rybcansky_Shop\Rybcansky_Shop\obj\Debug\netcoreapp3.1
 X:\ČTVRŤÁK\PRG\@Projekt\Rybcansky_Shop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Order.cshtml.g.cs
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\bin\Debug\netcoreapp3.1\Rybcansky_Shop.exe
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\bin\Debug\netcoreapp3.1\Rybcansky_Shop.deps.json
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\bin\Debug\netcoreapp3.1\Rybcansky_Shop.runtimeconfig.json
@@ -1002,3 +1001,5 @@ C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcore
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Rybcansky_Shop.pdb
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Rybcansky_Shop.genruntimeconfig.cache
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CartTitleComponent\Default.cshtml.g.cs
+C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\scopedcss\bundle\Rybcansky_Shop.styles.css
+C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Detail.cshtml.g.cs

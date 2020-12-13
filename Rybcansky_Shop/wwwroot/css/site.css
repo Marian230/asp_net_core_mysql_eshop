@@ -338,6 +338,10 @@ footer {
     padding: 2em 2em;
 }
 
+foooter a:hover {
+    color: #ff9999;
+}
+
 .footer-div {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 2fr;
@@ -412,9 +416,9 @@ footer h5 {
     justify-content: space-between;
 }
 
-.footer-bottom p {
-    color: gray;
-}
+    .footer-bottom p {
+        color: gray;
+    }
 
     .footer-bottom img {
         display: inline;
@@ -425,7 +429,7 @@ footer h5 {
 
 
 /* Cart */
-.cart-bg {
+.item-bg {
     padding: 5em 0;
     background: url("../images/bg/cart.png");
     grid-column: 1/5;
@@ -433,16 +437,21 @@ footer h5 {
     background-size: cover;
 }
 
-.cart-bg h2 {
-    font-size: 2.2rem;
-    padding: 0;
-    margin: 0 0 0.1em 0;
-}
+    .item-bg h2 {
+        font-size: 2.2rem;
+        padding: 0;
+        margin: 0 0 0.1em 0;
+    }
 
-.cart-bg p {
-    font-size: .9rem;
-    margin-bottom: 3em;
-}
+    .item-bg a {
+        color: black;
+    }
+
+    .item-bg p {
+        font-size: .9rem;
+        margin-bottom: 3em;
+        color: #ff9999;
+    }
 
 .cart-detail {
     display: grid;
@@ -463,20 +472,90 @@ footer h5 {
     }
 
 
-.cart-detail img {
-    height: 10em;
-    margin: auto;
-    padding: 0 0.3em;
-}
+    .cart-detail img {
+        height: 10em;
+        margin: auto;
+        padding: 0 0.3em;
+    }
 
     .cart-detail a {
         font-size: 1.6rem;
         color: #343a40;
     }
 
-    .cart-detail a:hover {
-        color: var(--myPink);
-    }
+        .cart-detail a:hover {
+            color: var(--myPink);
+        }
 
 
 /* Blog */
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.blog-li {
+    text-align: left;
+    padding-right: 2em;
+    position: relative;
+    margin: 0 0 4em 0;
+}
+
+    .blog-li > a {
+        color: black;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    .blog-li h2 {
+        margin-left: 0;
+    }
+
+    .blog-li span {
+        margin: 0 0 0.5em 0;
+    }
+
+    .blog-li img {
+        margin: 0 0 1em 0;
+    }
+
+    .blog-li > a:hover {
+        color: var(--lightPink);
+    }
+
+    .blog-li p {
+        font-size: 1rem;
+        margin: 1em 0 2em 0;
+    }
+
+    .blog-li .read-more-button a {
+        border: 1px solid #f2f2f2;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        padding: 1.2em 1.4em;
+        margin: 1em 0 10em 0;
+        background-color: #f2f2f2;
+        color: #363f4d;
+    }
+
+        .blog-li .read-more-button a:hover {
+            background-color: var(--lightPink);
+            color: white;
+        }
+
+    .blog-li span {
+        margin-top: 0.8em;
+    }
+
+        .blog-li span * {
+            display: inline-block;
+        }
+
+        .blog-li span .gray-div {
+            color: #6c757d;
+        }
+
+.blog-list {
+    background-color: #f2f2f2;
+}

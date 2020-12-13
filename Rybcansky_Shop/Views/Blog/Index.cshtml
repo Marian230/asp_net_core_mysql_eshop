@@ -1,16 +1,36 @@
 ﻿@using Rybcansky_Shop.Controllers.Web.Blog;
 
-<div class="blog-bg">
-
+<div class="item-bg">
+    <h2>BLOG</h2>
+    <p><a asp-controller="Home" asp-action="Index">Home&emsp;></a>&emsp;Blog</p>
 </div>
-<ul class="content-wrap">
-    @foreach (BlogListClass item in this.ViewBag.Data)
-    {
-        <li>
-            <img src="@("/images/" + item.Picture.path)" alt="@item.Picture.name" />
-            <h2>@item.Article.header</h2>
-            <p>@item.Article.author</p>
-            <p>@item.Article.text</p>
-        </li>
-    }
-</ul>
+
+<div class="content-wrap blog-grid">
+    <div>
+        <ul>
+            @foreach (BlogListClass item in this.ViewBag.Data)
+             {
+                 <li class="blog-li">
+                    <a asp-action="Detail"><img src="@("/images/" + item.Picture.path)" alt="@item.Picture.name" /></a>
+                    <a asp-action="Detail">@item.Article.header</a>
+                    <br />
+                    <span>
+                        @item.Article.author
+                        |
+                        <span class="gray-div">
+                            @item.Article.time.ToLocalTime()
+                        </span>
+                    </span>
+                    <hr />
+                    <p>@item.Article.text.Substring(0, 170)...</p>
+                    <div class="read-more-button">
+                        <a asp-action="Detail">READ MORE</a>
+                    </div>
+                </li>
+             }
+        </ul>
+    </div>
+    <div class="blog-list">
+        <p>Recent Post</p>
+    </div>
+</div>
