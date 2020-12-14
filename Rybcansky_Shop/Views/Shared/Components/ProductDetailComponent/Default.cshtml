@@ -1,4 +1,5 @@
-﻿@model Rybcansky_Shop.Models.Cart_Item
+﻿
+@model Rybcansky_Shop.Models.Order_Item
 
 <div class="row">
     <div class="card col-8" style="width: 1000px">
@@ -35,13 +36,13 @@
                     </div>
                     <div class="col">
                         <input asp-for="quantity" type="number" class="input-sm" style="height: 100%" value="1"/> ks
-                        <input asp-for="id_Cart" value="@this.ViewBag.Cart.id" hidden/>
+                        <input asp-for="id_Order" value="@this.ViewBag.Cart.id" hidden/>
 
-                        <select asp-for="id_Product_Variant">
+                        <select asp-for="id_Product">
                             @foreach (Variant item in this.ViewBag.Variants)
-                            {
+                             {
                                 <option value="@item.id">@item.color</option>
-                            }
+                             }
                         </select>
                     </div>
                     <div class="col">

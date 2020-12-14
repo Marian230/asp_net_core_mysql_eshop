@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rybcansky_Shop.Controllers.Web.Blog
 {
-    public class BlogController : AbstractController
+    public class BlogController : UserController
     {
         public IActionResult Index()
         {

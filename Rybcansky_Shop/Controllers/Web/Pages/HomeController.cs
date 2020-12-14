@@ -10,7 +10,7 @@ using Rybcansky_Shop.Models;
 
 namespace Rybcansky_Shop.Controllers
 {
-    public class HomeController : AbstractController
+    public class HomeController : UserController
     {
         public IActionResult Index()
         {

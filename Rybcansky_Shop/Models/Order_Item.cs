@@ -13,6 +13,10 @@ namespace Rybcansky_Shop.Models
 
         public int? id_Product { get; set; }
 
+        public decimal? price_Standart { get; set; }
+
+        public decimal? price_Discount { get; set; }
+
         public int quantity { get; set; }
 
         public string size { get; set; }

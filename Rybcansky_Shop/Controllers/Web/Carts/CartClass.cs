@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rybcansky_Shop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +8,8 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
 {
     public class CartClass
     {
+        public Order_Item Order_item { get; set; }
+
         public int id { get; set; }
 
         public int quantity { get; set; }

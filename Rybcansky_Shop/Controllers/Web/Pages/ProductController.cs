@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rybcansky_Shop.Controllers.Page
 {
-    public class ProductController : AbstractController
+    public class ProductController  : UserController
     {
 
 

@@ -9,6 +9,10 @@ namespace Rybcansky_Shop.Models
     {
         public DateTime time { get; set; }
 
+        public bool finished { get; set; }
+
+        public int? cookie_Id { get; set; }
+
         public decimal? price_Standart { get; set; }
 
         public decimal? price_Discount { get; set; }
