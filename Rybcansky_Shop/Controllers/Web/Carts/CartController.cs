@@ -73,8 +73,13 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
 
         public IActionResult Delete(int id)
         {
-            Cart_Item deletedItem = this.context.Cart_Item.Find(id);
+            /*Cart_Item deletedItem = this.context.Cart_Item.Find(id);
             this.context.Cart_Item.Remove(deletedItem);
+            this.context.SaveChanges();*/
+
+            
+            Order_Item deletedItem = this.context.Order_Item.Find(id);
+            this.context.Order_Item.Remove(deletedItem);
             this.context.SaveChanges();
 
             return RedirectToAction("Index");
@@ -129,7 +134,7 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
 
                          from order in this.context.Order
                          where cartItem.id_Order == order.id
-                         where order.cookie_Id == cookie
+                         //where order.cookie_Id == cookie
 
                          where productPicture.id_Product == product.id
                          where picture.id == productPicture.id_Picture
@@ -146,6 +151,7 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
                              variantPriceStandart = variant.price_Standart,
                              variantPriceDiscount = variant.price_Discount,
                              picture = picture.path,
+                             Order_item = cartItem
                          }).ToList();
 
             return query;

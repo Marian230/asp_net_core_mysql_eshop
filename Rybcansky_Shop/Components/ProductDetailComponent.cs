@@ -17,7 +17,7 @@ namespace Rybcansky_Shop.Components
             this.ViewBag.Product = product;
             this.ViewBag.Picture = this.PictureQuery(product);
             this.ViewBag.Vendor = this.VendorQuery(product);
-            this.ViewBag.Cart = this.context.Cart.First();
+            this.ViewBag.Cart = this.context.Order.First();
             this.ViewBag.Variants = VariantQuery(product);
 
             return View();

@@ -24,7 +24,7 @@
                 <span>@item.quantity</span>
                 <span>@((item.variantPriceDiscount == null) ? @item.variantPriceStandart : item.variantPriceDiscount) Kč</span>
                 <span>@(((item.variantPriceDiscount == null) ? @item.variantPriceStandart : item.variantPriceDiscount) * item.quantity) Kč</span>
-                <span><a asp-controller="Cart" asp-action="Delete" asp-route-id="@item.id">×</a></span>
+                <span><a asp-controller="Cart" asp-action="Delete" asp-route-id="@item.Order_item.id">×</a></span>
             }
         </div>
     </form>
