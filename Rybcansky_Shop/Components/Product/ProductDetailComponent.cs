@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Rybcansky_Shop.Models;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,21 @@ namespace Rybcansky_Shop.Components
 
         public IViewComponentResult Invoke(Product product)
         {
-            //this.ViewBag.Product = this.context.Product.Find(id);
             this.ViewBag.Product = product;
             this.ViewBag.Picture = this.PictureQuery(product);
             this.ViewBag.Vendor = this.VendorQuery(product);
-            this.ViewBag.Cart = this.context.Order.First();
+
+            Order cart = null;
+            foreach (var item in this.context.Order)
+            {
+                if (item.cookie_Id == Convert.ToInt32(this.HttpContext.Session.GetString("userId")))
+                {
+                    cart = item;
+                    break;
+                }
+            }
+            this.ViewBag.Cart = cart;
+
             this.ViewBag.Variants = VariantQuery(product);
 
             return View();

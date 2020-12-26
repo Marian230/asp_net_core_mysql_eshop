@@ -15,6 +15,7 @@ namespace Rybcansky_Shop.Components
         {
             this.ViewBag.Product = product;
             this.ViewBag.Picture = this.PictureQuery(product);
+            this.ViewBag.Test = "TEST";
 
             return View();
         }

@@ -15,7 +15,8 @@ namespace Rybcansky_Shop.Components
         {
             //List<Cart_Item> list = this.context.Cart_Item.ToList();
             
-            this.ViewBag.CartQuantity = this.context.Cart_Item.Count();
+            //this.ViewBag.CartQuantity = this.context.Cart_Item.Count();
+            this.ViewBag.CartQuantity = this.context.Order_Item.Count();
 
             return View();
         }

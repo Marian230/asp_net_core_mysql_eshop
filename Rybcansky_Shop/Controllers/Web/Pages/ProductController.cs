@@ -9,8 +9,6 @@ namespace Rybcansky_Shop.Controllers.Page
 {
     public class ProductController  : UserController
     {
-
-
         public IActionResult Index(int id)
         {
             //if (id != null)

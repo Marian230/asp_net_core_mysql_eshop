@@ -48,6 +48,10 @@ header .debra-bar {
         padding-bottom: 0.1em;
     }
 
+header nav a:hover {
+    color: var(--myPink);
+}
+
 header .follow-us > * {
     display: inline;
     margin: 0 0.3em;

@@ -13,16 +13,17 @@ namespace Rybcansky_Shop.Controllers
     {
         protected MyContext context { get; set; } = new MyContext();
 
-        Random random = new Random();
+        protected Random random { get; set; } = new Random();
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            if (Request.Cookies["userId"] == null)
+            if (this.HttpContext.Session.GetString("userId") == null)
             {
-                int id = random.Next(0, Int32.MaxValue);
-                
-                this.context.Order.Add ( new Order() { cookie_Id = id } );
-                Response.Cookies.Append("userId", id + "");
+                int cookieID = this.random.Next(0, int.MaxValue);
+
+                this.context.Order.Add(new Order() { cookie_Id = cookieID });
+                this.context.SaveChanges();
+                this.HttpContext.Session.SetString("userId", cookieID.ToString());
             }
 
             base.OnActionExecuting(context);

@@ -14,9 +14,9 @@ namespace Rybcansky_Shop.Models
 
         public DbSet<Billing_Adress> Billing_Adress { get; set; }
 
-        public DbSet<Cart> Cart { get; set; }
+        /*public DbSet<Cart> Cart { get; set; }
 
-        public DbSet<Cart_Item> Cart_Item { get; set; }
+        public DbSet<Cart_Item> Cart_Item { get; set; }*/
 
         public DbSet<Category> Category { get; set; }
 

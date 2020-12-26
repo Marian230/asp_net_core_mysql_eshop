@@ -10,8 +10,6 @@ namespace Rybcansky_Shop.Controllers
 {
     public class LoginController : AbstractController
     {
-        MyContext context { get; set; } = new MyContext();
-
         [HttpGet]
         public IActionResult Index()
         {
