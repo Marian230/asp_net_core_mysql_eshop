@@ -14,7 +14,6 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
         {
             List<CartClass> items = this.Query();
 
-            //this.ViewBag.Cookie = this.HttpContext.Session.GetString("userId");
             this.ViewBag.Data = items;
             this.ViewBag.totalPrice = this.TotalPrice(items);
 
@@ -25,7 +24,17 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
         public IActionResult Create(Order_Item item)
         {
             int? id = null;
-            foreach (var contextItem in this.context.Order_Item)
+            List<Order_Item> order_items = (from order in this.context.Order
+                                            from order_item in this.context.Order_Item
+                                            where order.id == order_item.id_Order
+                                            where order.cookie_Id == Convert.ToInt32(this.HttpContext.Session.GetString("userId"))
+                                            select new Order_Item()
+                                            {
+                                                id = order_item.id,
+                                                id_Product = order_item.id_Product
+                                            }).ToList();
+
+            foreach (var contextItem in order_items)
             {
                 if (contextItem.id_Product == item.id_Product)
                 {
@@ -128,8 +137,6 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
 
         private List<CartClass> Query()
         {
-            //int cookie = Convert.ToInt32(this.ViewBag.Cookie);
-
             var query = (from cartItem in this.context.Order_Item
                          from variant in this.context.Variant
                          from product in this.context.Product

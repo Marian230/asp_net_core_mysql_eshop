@@ -20,7 +20,7 @@ namespace Rybcansky_Shop.Controllers
             if (this.HttpContext.Session.GetString("userId") == null)
             {
                 int cookieID = this.random.Next(0, int.MaxValue);
-
+                //this.HttpContext.Session.Remove("userId");
                 this.context.Order.Add(new Order() { cookie_Id = cookieID });
                 this.context.SaveChanges();
                 this.HttpContext.Session.SetString("userId", cookieID.ToString());

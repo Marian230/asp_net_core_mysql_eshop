@@ -17,6 +17,8 @@ namespace Rybcansky_Shop.Models
 
         public decimal? price_Discount { get; set; }
 
+        public DateTime last_Acces_Time { get; set; }
+
         public int? id_Contact_Info { get; set; }
 
         public int? id_Shipping_Method { get; set; }
