@@ -36,8 +36,19 @@
 
     <div class="products">
         @foreach (Product item in this.ViewBag.Products)
-         {
+        {
             <vc:product-component product="@item"></vc:product-component>
-         }
+        }
+    </div>
+</div>
+
+<div class="newsletter grid">
+    <div class="content-wrap">
+        <h2>Sign Up For Newsletters</h2>
+        <h3>Be the First to Know. Sign up for newsletter today</h3>
+        <form asp-controller="newsletter" asp-action="index">
+            <input type="text" name="search" placeholder="Your email address" />
+            <input type="submit" name="name" value="Subscribe !" />
+        </form>
     </div>
 </div>

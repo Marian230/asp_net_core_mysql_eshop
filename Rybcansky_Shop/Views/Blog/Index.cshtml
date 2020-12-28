@@ -5,12 +5,11 @@
     <p><a asp-controller="Home" asp-action="Index">Home&emsp;></a>&emsp;Blog</p>
 </div>
 
-<div class="content-wrap blog-grid">
-    <div>
+<div class="content-wrap class-layout">
         <ul>
             @foreach (BlogListClass item in this.ViewBag.Data)
-             {
-                 <li class="blog-li">
+            {
+                <li class="blog-li">
                     <a asp-action="Detail"><img src="@("/images/" + item.Picture.path)" alt="@item.Picture.name" /></a>
                     <a asp-action="Detail">@item.Article.header</a>
                     <br />
@@ -27,10 +26,37 @@
                         <a asp-action="Detail">READ MORE</a>
                     </div>
                 </li>
-             }
+                }
         </ul>
-    </div>
-    <div class="blog-list">
-        <p>Recent Post</p>
-    </div>
+
+        <div class="blog-menu">
+            <div>
+                <h3>Search</h3>
+                <form>
+                    <input type="text" placeholder="Search our store" />
+                    <input type="submit" value="Search" />
+                </form>
+            </div>
+            <div>
+                <h3>Custom Menu</h3>
+                <a asp-area="" asp-controller="Home" asp-action="Index"><p>Home</p></a>
+                <a asp-area="" asp-controller="Home" asp-action="Index"><p>Shop</p></a>
+                <a asp-area="" asp-controller="Product" asp-action="Index"><p>Products</p></a>
+                <a asp-area="" asp-controller="Blog" asp-action="Index"><p>Blog</p></a>
+                <a asp-area="" asp-controller="About" asp-action="Index"><p>About</p></a>
+                <a asp-area="" asp-controller="Contact" asp-action="Index"><p>Contact</p></a>
+            </div>
+            <div>
+                <h3>Recent Post</h3>
+
+            </div>
+            <div>
+                <h3>Archive</h3>
+
+            </div>
+            <div>
+                <h3>Tags</h3>
+
+            </div>
+        </div>
 </div>

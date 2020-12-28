@@ -198,7 +198,7 @@ header a {
 
 
 
-
+/* Home */
 main .stolen-image {
     width: 100%;
 }
@@ -264,6 +264,44 @@ h2 {
             .sortbox h3 a:hover {
                 color: var(--myPink);
             }
+
+
+.newsletter {
+    grid-column: 1/5;
+    background-color: var(--myPink);
+    padding: 4em 0 4em 0;
+}
+
+    .newsletter input[type=text] {
+        margin: 0;
+        padding: 1.2em;
+        width: 60%;
+        background-color: white;
+        border: 0;
+    }
+
+        .newsletter input[type=text]:focus {
+            outline: none;
+        }
+
+    .newsletter input[type=submit] {
+        margin: 0;
+        padding: 0.7em 0.6em 0.7em 0.6em;
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: white;
+        background-color: var(--myPink);
+        border: 0;
+    }
+
+        .newsletter input[type=submit]:hover {
+            color: var(--myPink);
+            background-color: rgb(100, 100, 100);
+        }
+
+    .newsletter h3 {
+        font-weight: normal;
+    }
 
 
 /* Products */
@@ -493,6 +531,11 @@ footer h5 {
 
 
 /* Blog */
+.class-layout {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
 .blog-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -520,7 +563,7 @@ footer h5 {
     }
 
     .blog-li img {
-        margin: 0 0 1em 0;
+        width: 100%; 
     }
 
     .blog-li > a:hover {
@@ -560,6 +603,46 @@ footer h5 {
             color: #6c757d;
         }
 
-.blog-list {
+.blog-menu {
+    text-align: left;
+    padding: 1em;
     background-color: #f2f2f2;
+    display: block;
 }
+
+.blog-menu div {
+    margin-bottom: 2em;
+}
+
+    .blog-menu div a {
+        color: #333333;
+    }
+
+    .blog-menu div a:hover {
+        color: var(--myPink);
+    }
+
+.blog-menu h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5em;
+}
+
+    .blog-menu input[type=text] {
+        padding: 0.5em;
+        border: 1px solid gray;
+    }
+
+        .blog-menu input[type=text]:focus {
+            outline: none;
+        }
+
+        .blog-menu input[type=submit] {
+            padding: 0.5em;
+            background-color: white;
+            color: black;
+            border: 1px solid gray;
+        }
+
+    .blog-menu input[type=submit]:hover {
+        color: var(--myPink);
+    }
