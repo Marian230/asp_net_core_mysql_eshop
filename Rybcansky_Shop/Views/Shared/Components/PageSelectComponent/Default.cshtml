@@ -1,0 +1,13 @@
+﻿<div class="page-select-div">
+    <div class="page-select-left">
+        @for (int i = 0; i < this.ViewBag.pageOptions.Count; i++)
+         {
+            <div class="page-select-item">
+                <a href="#">@this.ViewBag.pageOptions[i]</a>
+            </div>
+         }
+    </div>
+    <div class="page-select-right">
+        <p>Showing 1 - 9 of 34 result</p>
+    </div>
+</div>

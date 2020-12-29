@@ -1003,3 +1003,6 @@ C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcore
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CartTitleComponent\Default.cshtml.g.cs
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\scopedcss\bundle\Rybcansky_Shop.styles.css
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Detail.cshtml.g.cs
+C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs
+C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\OverlayComponent\Default.cshtml.g.cs
+C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\PageSelectComponent\Default.cshtml.g.cs

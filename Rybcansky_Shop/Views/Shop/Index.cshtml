@@ -1,0 +1,95 @@
+﻿<vc:overlay-component name="Shop"></vc:overlay-component>
+
+<div class="content-wrap shop-div">
+    <div class="shop-left">
+        <div class="shop-header">
+            <div class="shop-header-left">
+                <p>Showing 1 - 9 of 34 result</p>
+            </div>
+            <div class="shop-header-right">
+                <div class="select-quantity">
+                    <p>Show: </p>
+                    <select>
+                        @for (int i = 3; i <= 50; i++)
+                        {
+                            @if (i == 5)
+                            {
+                                <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="select-sort-by">
+                    <p>Sort by: </p>
+                    <select>
+                        @for (int i = 0; i < this.ViewBag.sortingOptions.Count; i++)
+                        {
+                            <option value="@i">@this.ViewBag.sortingOptions[i]</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="products shop-products">
+            @foreach (Product item in this.ViewBag.Products)
+            {
+                <vc:product-component product="@item"></vc:product-component>
+            }
+        </div>
+
+        <div class="shop-page-select">
+            <vc:page-select-component></vc:page-select-component>
+        </div>
+    </div>
+    <div class="shop-menu-wrapper">
+        <div class="shop-menu">
+            <div class="shop-search-div">
+                <h4>Search</h4>
+                <form>
+                    <input type="text" placeholder="Search out store" />
+                    <input type="submit" value="Search" />
+                </form>
+            </div>
+            <div class="shop-categories-div">
+                <h4>Categories</h4>
+                <a href="#">New Arrivals</a>
+                <a href="#">Sale Items</a>
+            </div>
+            <hr />
+            <div class="shop-vendors-div">
+                <h4>Vendors</h4>
+                @for (int i = 0; i < this.ViewBag.Vendors.Count; i++)
+                {
+                    <a href="#">@this.ViewBag.Vendors[i]</a>
+                }
+            </div>
+            <hr />
+            <div class="shop-size-div">
+                <h4>Size</h4>
+                <div class="shop-sizes">
+                    @for (int i = 0; i < this.ViewBag.Sizes.Count; i++)
+                    {
+                        <a href="#">@this.ViewBag.Sizes[i]</a>
+                    }
+                </div>
+            </div>
+            <hr />
+            <div class="shop-tags-div">
+                <h4>Tags</h4>
+                <div class="shop-sizes">
+                    @for (int i = 0; i < this.ViewBag.Tags.Count; i++)
+                    {
+                        <a href="#">@this.ViewBag.Tags[i]</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

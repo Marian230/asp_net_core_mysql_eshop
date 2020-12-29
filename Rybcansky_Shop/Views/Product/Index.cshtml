@@ -1,8 +1,13 @@
-﻿@if(this.ViewBag.SpecProduct != null || true)
- {
-    <vc:product-detail-component product="@this.ViewBag.SpecProduct"></vc:product-detail-component>
- }
-else 
-{
-    <p>fakt nevím co má být tady.</p>
-}
+﻿<vc:overlay-component name="@this.ViewBag.SpecProduct.name"></vc:overlay-component>
+
+
+<div class="content-wrap">
+    @if (this.ViewBag.SpecProduct != null || true)
+    {
+        <vc:product-detail-component product="@this.ViewBag.SpecProduct"></vc:product-detail-component>
+    }
+    else
+    {
+        <p>fakt nevím co má být tady.</p>
+    }
+</div>

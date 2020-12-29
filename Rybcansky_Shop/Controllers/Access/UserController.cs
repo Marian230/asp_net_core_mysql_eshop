@@ -15,7 +15,7 @@ namespace Rybcansky_Shop.Controllers
 
         protected Random random { get; set; } = new Random();
 
-        public static double ExpireTime { get; set; } = 3600;
+        public static double ExpireTime { get; set; } = 600;
 
         public static string userId { get; set; } = "userId";
 
