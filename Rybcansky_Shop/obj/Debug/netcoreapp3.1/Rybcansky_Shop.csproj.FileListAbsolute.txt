@@ -1007,3 +1007,4 @@ C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcore
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\OverlayComponent\Default.cshtml.g.cs
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\PageSelectComponent\Default.cshtml.g.cs
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
+C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs

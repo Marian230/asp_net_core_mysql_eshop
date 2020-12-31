@@ -1052,3 +1052,122 @@ footer h5 {
         .sponsors-div a:hover {
             border: 1px solid var(--myPink);
         }
+
+
+/* Contact */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2em 0 3em 0;
+}
+
+.contact-form {
+    text-align: left;
+}
+
+    .contact-form h1 {
+        font-weight: normal;
+        margin-top: 0;
+    }
+
+    .contact-form label {
+        color: #888;
+        font-size: 1rem;
+    }
+
+    .contact-form input[type=text], .contact-form textarea {
+        display: block;
+        margin: 0.3em 0 1.5em 0;
+        padding: 1em 2em 1em 1em;
+        width: 100%;
+        border: 1px solid #e0e0e0;
+        height: 4em;
+        resize: vertical;
+        font-size: 1rem;
+    }
+
+    .contact-form textarea {
+        height: 15em;
+    }
+
+        .contact-form input[type=text]::placeholder, .contact-form textarea::placeholder {
+            color: #888;
+            font-size: 1rem;
+        }
+
+
+        .contact-form input[type=text]:focus, .contact-form textarea:focus {
+            outline: none;
+        }
+
+    .contact-form input[type=submit] {
+        color: white;
+        background-color: var(--myPink);
+        font-weight: bold;
+        text-align: center;
+        width: 10.5em;
+        height: 2.6em;
+        border: none;
+        font-size: 1rem;
+        margin-top: 0.3em;
+    }
+
+        .contact-form input[type=submit]:hover {
+            background-color: black;
+            transition: 0.3s;
+        }
+
+        .contact-form input[type=submit]:focus {
+            outline: none;
+        }
+
+
+.contact-info {
+    grid-column: 2/3;
+    margin-left: 7em;
+    background-color: #f2f2f2;
+    padding: 2em;
+    text-align: left;
+}
+
+    .contact-info h2 {
+        font-weight: normal;
+        margin: 0 0 0.4em 0;
+        font-size: 2rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+.contact-bar {
+    margin-bottom: 1em;
+}
+
+    .contact-bar img {
+        margin: 0.2em 0.3em 0 0;
+        height: 1.2em;
+        float: left;
+    }
+
+    .contact-bar h3 {
+        font-weight: normal;
+        font-size: 1.2rem;
+        margin-bottom: 0.5em;
+    }
+
+    .contact-bar p a {
+        color: black;
+    }
+
+        .contact-bar p a:hover {
+            color: var(--myPink);
+        }
+
+    .contact-bar hr {
+        margin: 1em 0.2em;
+        border: none;
+        background-color: #e0e0e0;
+        color: #e0e0e0;
+        height: 1px;
+    }
