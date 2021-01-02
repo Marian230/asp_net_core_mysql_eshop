@@ -35,6 +35,11 @@ ul {
     list-style: none
 }
 
+input[type=submit]:hover {
+    cursor: pointer;
+}
+
+
 
 /* Header */
 header .debra-bar {
@@ -110,7 +115,6 @@ header .follow-us img {
         text-align: center;
         margin: auto 0;
         transition: 0.2s;
-        min-width: 2em;
     }
 
 header hr {
@@ -195,8 +199,50 @@ header a {
 }
 
 
+.cart-buttons {
+    text-align: left;
+    margin-bottom: 3em;
+    object-fit: contain;
+    padding-top: 1.5em;
+}
 
+    .cart-buttons a {
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 0.8em;
+        margin: 1em 0.8em 0 0;
+        font-size: 1rem;
+    }
 
+    .cart-buttons a:hover {
+        background-color: #666666;
+    }
+
+.cart-total-price {
+    margin: 1em 0 0 0;
+    text-align: left;
+    width: 50%;
+    color: #333;
+}
+
+    .cart-total-price h2 {
+        font-weight: normal;
+        margin-left: 0;
+    }
+
+.cart-price-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--borderColor);
+    border-right: 1px solid var(--borderColor);
+}
+
+    .cart-price-grid span {
+        padding: 1em;
+        border-left: 1px solid var(--borderColor);
+        border-bottom: 1px solid var(--borderColor);
+    }
 
 /* Home */
 main .stolen-image {
@@ -356,7 +402,7 @@ h2 {
 @media(min-width:800px) {
     .grid {
         display: grid;
-        grid-template-columns: 1fr repeat(2, minmax(auto, 34em)) 1fr
+        grid-template-columns: 1fr repeat(2, minmax(auto, 34em)) 1fr;
     }
 
     .content-wrap {
@@ -532,6 +578,112 @@ footer h5 {
     font-size: 0.9rem;
 }
 
+/* BlogTags Component */
+.blog-tags {
+    max-width: 13em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .blog-tags input {
+        width: auto;
+        padding: 0.8em 0.9em;
+        margin: 0.2em;
+        background-color: white;
+        border: 1px solid #ebebeb;
+        border-radius: 5px;
+        background: transparent;
+        font-size: 0.9rem;
+    }
+
+        .blog-tags input:hover {
+            background-color: var(--myPink);
+            color: white;
+        }
+
+/* BlogMenu Component */
+
+.blog-menu {
+    text-align: left;
+    padding: 1em;
+    background-color: #f8f8f8;
+    display: block;
+}
+
+    .blog-menu > div {
+        margin-bottom: 2em;
+    }
+
+    .blog-menu div a {
+        color: #333333;
+    }
+
+        .blog-menu div a:hover {
+            color: var(--myPink);
+        }
+
+    .blog-menu h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5em;
+    }
+
+    .blog-menu input[type=text] {
+        padding: 0.5em;
+        border: 1px solid gray;
+    }
+
+        .blog-menu input[type=text]:focus {
+            outline: none;
+        }
+
+    .blog-menu input[type=submit] {
+        padding: 0.5em;
+        background-color: white;
+        color: black;
+        border: 1px solid gray;
+    }
+
+        .blog-menu input[type=submit]:hover {
+            color: var(--myPink);
+        }
+
+
+.blog-posts-mini-menu {
+    margin-top: 1em;
+}
+
+    .blog-posts-mini-menu hr {
+        border: none;
+        background-color: #dcdcdc;
+        color: #dcdcdc;
+        height: 1px;
+    }
+
+.mini-posts {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+    .mini-posts div {
+        margin: 0;
+    }
+
+    .mini-posts img {
+        width: 80%;
+    }
+
+    .mini-posts div a {
+        font-weight: normal;
+        margin: 0;
+        color: black;
+    }
+
+        .mini-posts div a:hover {
+            color: var(--lightPink);
+        }
+
+
+
 /* Cart */
 .cart-detail {
     display: grid;
@@ -539,7 +691,7 @@ footer h5 {
     border-top: 1px solid var(--borderColor);
     border-right: 1px solid var(--borderColor);
     box-shadow: 0px 4px 3px lightgray;
-    margin-bottom: 20em;
+    
 }
 
     .cart-detail > span {
@@ -641,106 +793,7 @@ footer h5 {
             color: #6c757d;
         }
 
-.blog-menu {
-    text-align: left;
-    padding: 1em;
-    background-color: #f8f8f8;
-    display: block;
-}
-
-    .blog-menu > div {
-        margin-bottom: 2em;
-    }
-
-    .blog-menu div a {
-        color: #333333;
-    }
-
-        .blog-menu div a:hover {
-            color: var(--myPink);
-        }
-
-    .blog-menu h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.5em;
-    }
-
-    .blog-menu input[type=text] {
-        padding: 0.5em;
-        border: 1px solid gray;
-    }
-
-        .blog-menu input[type=text]:focus {
-            outline: none;
-        }
-
-    .blog-menu input[type=submit] {
-        padding: 0.5em;
-        background-color: white;
-        color: black;
-        border: 1px solid gray;
-    }
-
-        .blog-menu input[type=submit]:hover {
-            color: var(--myPink);
-        }
-
-
-.blog-posts-mini-menu {
-    margin-top: 1em;
-}
-
-    .blog-posts-mini-menu hr {
-        border: none;
-        background-color: #dcdcdc;
-        color: #dcdcdc;
-        height: 1px;
-    }
-
-.mini-posts {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-}
-
-    .mini-posts div {
-        margin: 0;
-    }
-
-    .mini-posts img {
-        width: 80%;
-    }
-
-    .mini-posts div a {
-        font-weight: normal;
-        margin: 0;
-        color: black;
-    }
-
-        .mini-posts div a:hover {
-            color: var(--lightPink);
-        }
-
-.blog-tags {
-    max-width: 13em;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-    .blog-tags input {
-        width: auto;
-        padding: 0.8em 0.9em;
-        margin: 0.2em;
-        background-color: white;
-        border: 1px solid #ebebeb;
-        border-radius: 5px;
-        background: transparent;
-        font-size: 0.9rem;
-    }
-
-        .blog-tags input:hover {
-            background-color: var(--myPink);
-            color: white;
-        }
+/* tady byl block-left-neco*/
 
 
 /* Shop */
@@ -1081,7 +1134,7 @@ footer h5 {
         padding: 1em 2em 1em 1em;
         width: 100%;
         border: 1px solid #e0e0e0;
-        height: 4em;
+        height: 3.5em;
         resize: vertical;
         font-size: 1rem;
     }
@@ -1170,4 +1223,146 @@ footer h5 {
         background-color: #e0e0e0;
         color: #e0e0e0;
         height: 1px;
+    }
+
+
+/* Article-Detail*/
+.article-detail-div {
+    display: grid;
+    grid-template-columns: auto 2em auto;
+    margin-bottom: 3em;
+}
+
+.article-detail-left {
+    grid-column: 1/2;
+    border: 1px solid #efefef;
+    background-color: #ffffff;
+    text-align: left;
+    padding: 1em 1.5em 1.5em 1.5em;
+}
+
+.article-header {
+    text-align: center;
+}
+
+    .article-header h1 {
+        font-weight: normal;
+    }
+
+.article-detail-author {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    color: #999;
+    margin-bottom: 1em;
+}
+
+.article-header .icon {
+    height: 1em;
+    margin-right: 0.3em;
+    margin-top: 0.25em;
+    margin-left: 0.3em;
+}
+
+.article-detail-author-name {
+    color: black;
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+}
+
+.article-detail-img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.blog-detail-text {
+    color: #333;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.blog-detail-text p {
+    margin-top: 1em;
+}
+
+.blog-detail-tags {
+    margin: 2em 0;
+    text-align: left;
+}
+
+.blog-detail-tags hr {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.blog-detail-tags p {
+    display: inline;
+    color: #999;
+}
+
+    .blog-detail-tags a {
+        color: black;
+        font-size: 1rem;
+    }
+
+    .blog-detail-tags a:hover {
+        color: var(--myPink);
+    }
+
+.article-detail-right {
+    grid-column: 3/4;
+}
+
+.article-detail-container {
+    background-color: #f8f8f8f8;
+    padding: 1em;
+    width: 100%;
+}
+
+.comment-section {
+    text-align: left;
+}
+
+.comment {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1.6em;
+    padding: 1em;
+    box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.comment h4 {
+    color: #999;
+    margin-bottom: 0.2em;
+    margin-top: 0;
+}
+
+ .comment-time {
+    margin-bottom: 1em;
+    display: block;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+ .comment p {
+     font-size: 1rem;
+ }
+
+
+.blog-detail-comment {
+    margin-bottom: 4em;
+}
+
+.blog-detail-name-email {
+    display: grid;
+    grid-template-columns: auto 2em auto;
+}
+
+    .comment-name {
+        grid-column: 1/2;
+    }
+
+    .comment-email {
+        grid-column: 3/4;
     }

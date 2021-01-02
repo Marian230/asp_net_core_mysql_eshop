@@ -1,0 +1,54 @@
+﻿<div class="blog-menu">
+    <div class="search-div">
+        <h3>Search</h3>
+        <form>
+            <input type="text" placeholder="Search our store" />
+            <input type="submit" value="Search" />
+        </form>
+    </div>
+    <div class="menu-div">
+        <h3>Custom Menu</h3>
+        <a asp-area="" asp-controller="Home" asp-action="Index"><p>Home</p></a>
+        <a asp-area="" asp-controller="Home" asp-action="Shop"><p>Shop</p></a>
+        <a asp-area="" asp-controller="Product" asp-action="First"><p>Products</p></a>
+        <a asp-area="" asp-controller="Blog" asp-action="Index"><p>Blog</p></a>
+        <a asp-area="" asp-controller="About" asp-action="Index"><p>About</p></a>
+        <a asp-area="" asp-controller="Contact" asp-action="Index"><p>Contact</p></a>
+    </div>
+    <div class="recent-posts-div">
+        <h3>Recent Post</h3>
+        <div class="blog-posts-mini-menu">
+            <div class="mini-posts">
+                <div>
+                    <img src="/images/articles/0_prev.jpg" alt="blog-picture" />
+                </div>
+                <div>
+                    <a asp-area="" asp-controller="" asp-action="">Nadpis 1</a>
+                    <p>13.11. 2020</p>
+                </div>
+            </div>
+            <hr />
+            <div class="mini-posts">
+                <div>
+                    <img src="/images/articles/1_prev.jpg" alt="blog-picture" />
+                </div>
+                <div>
+                    <a asp-area="" asp-controller="" asp-action="">Nadpis 2</a>
+                    <p>12.11. 2020</p>
+                </div>
+            </div>
+            <hr />
+            <div class="mini-posts">
+                <div>
+                    <img src="/images/articles/2_prev.jpg" alt="blog-picture" />
+                </div>
+                <div>
+                    <a asp-area="" asp-controller="" asp-action="">Nadpis 2</a>
+                    <p>11.11. 2020</p>
+                </div>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <vc:tags-component></vc:tags-component>
+</div>

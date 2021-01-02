@@ -15,6 +15,25 @@ namespace Rybcansky_Shop.Controllers.Web.Blog
             return View();
         }
 
+        public IActionResult Detail(int id)
+        {
+            this.ViewBag.id = id;
+            this.ViewBag.Tags = new List<string>()
+            {
+                "bestselling",
+                "collection",
+                "dress",
+                "fashion",
+                "men",
+                "style",
+                "woman"
+            };
+
+            this.ViewBag.Comments = this.context.Comment.ToList();
+
+            return View();
+        }
+
         private List<BlogListClass> Query()
         {
             var query = (from article in this.context.Article

@@ -4,24 +4,43 @@
 
 <vc:overlay-component name="Košík"></vc:overlay-component>
 
-    <form asp-action="Cart" asp-controller="Order" class="content-wrap">
-        <div class="cart-detail">
-            <span>Obrázek</span>
-            <span>Název</span>
-            <span>Varianta</span>
-            <span>Počet</span>
-            <span>Cena</span>
-            <span>Celková cena</span>
-            <span></span>
-            @foreach (CartClass item in this.ViewBag.Data)
-            {
-                <span><img src="@("/images/" + @item.picture)" style="" /></span>
-                <span>@item.ProductName</span>
-                <span>@item.VariantName</span>
-                <span>@item.quantity</span>
-                <span>@((item.variantPriceDiscount == null) ? @item.variantPriceStandart : item.variantPriceDiscount) Kč</span>
-                <span>@(((item.variantPriceDiscount == null) ? @item.variantPriceStandart : item.variantPriceDiscount) * item.quantity) Kč</span>
-                <span><a asp-action="Delete" asp-route-id="@item.id">×</a></span>
-            }
-        </div>
-    </form>
+<form asp-action="Cart" asp-controller="Order" class="content-wrap">
+    <div class="cart-detail">
+        <span>Obrázek</span>
+        <span>Název</span>
+        <span>Varianta</span>
+        <span>Počet</span>
+        <span>Cena</span>
+        <span>Celková cena</span>
+        <span></span>
+        @foreach (CartClass item in this.ViewBag.Data)
+        {
+            <span><img src="@("/images/" + @item.picture)" style="" /></span>
+            <span>@item.ProductName</span>
+            <span>@item.VariantName</span>
+            <span>@item.quantity</span>
+            <span>@((item.variantPriceDiscount == null) ? @item.variantPriceStandart : item.variantPriceDiscount) Kč</span>
+            <span>@(((item.variantPriceDiscount == null) ? @item.variantPriceStandart : item.variantPriceDiscount) * item.quantity) Kč</span>
+            <span><a asp-action="Delete" asp-route-id="@item.id">×</a></span>
+        }
+    </div>
+</form>
+
+<div class="content-wrap cart-buttons">
+    <a href="#">Update Cart</a>
+    <a href="#">Clear Cart</a>
+</div>
+
+<div class="content-wrap cart-total-price">
+    <h2>Cart Totals</h2>
+    <div class="cart-price-grid">
+        <span>Subtotal</span>
+        <span>409.00 Kč</span>
+        <span>Total</span>
+        <span>818.00 Kč</span>
+    </div>
+</div>
+
+<div class="content-wrap cart-buttons">
+    <a asp-action="Order">Proceed to Checkout</a>
+</div>

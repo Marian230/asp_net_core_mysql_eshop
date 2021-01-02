@@ -20,6 +20,30 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
             return View();
         }
 
+        public IActionResult Order()
+        {
+            /*List<CartClass> cartList = this.Query();
+            this.ViewBag.Items = this.context.Cart_Item;
+            this.ViewBag.Price = this.TotalPrice(cartList);*/
+            this.ViewBag.Countries = new List<string>()
+            {
+                "Czechia",
+                "Slovakia",
+                "Poland",
+                "Hungary",
+                "Germany",
+                "Austria"
+            };
+
+
+            return View();
+        }
+
+        public IActionResult Shipping()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Create(Order_Item item)
         {
@@ -88,23 +112,12 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
             this.context.Cart_Item.Remove(deletedItem);
             this.context.SaveChanges();*/
 
-            
+
             Order_Item deletedItem = this.context.Order_Item.Find(id);
             this.context.Order_Item.Remove(deletedItem);
             this.context.SaveChanges();
 
             return RedirectToAction("Index");
-        }
-
-        public IActionResult Order()
-        {
-            /*List<CartClass> cartList = this.Query();
-            this.ViewBag.Items = this.context.Cart_Item;
-            this.ViewBag.Price = this.TotalPrice(cartList);*/
-
-
-
-            return View();
         }
 
         private List<CartClass> QueryOld()

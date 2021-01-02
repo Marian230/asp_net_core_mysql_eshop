@@ -1,0 +1,24 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 34em)) 1fr;
+    grid-template-rows: 1fr;
+    width: 100vw;
+    height: 100vh;
+}
+
+.content-wrap {
+    grid-column: 2/4;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+.empty-color {
+    grid-column: 4/5;
+
+    background-color: #fafafa;
+}

@@ -6,94 +6,28 @@
     <ul>
         @foreach (BlogListClass item in this.ViewBag.Data)
         {
-<li class="blog-li">
-    <a asp-action="Detail"><img src="@("/images/" + item.Picture.path)" alt="@item.Picture.name" /></a>
-    <a asp-action="Detail">@item.Article.header</a>
-    <br />
-    <span>
-        @item.Article.author
-        |
-        <span class="gray-div">
-            @item.Article.time.ToLocalTime()
-        </span>
-    </span>
-    <hr />
-    <p>@item.Article.text.Substring(0, 170)...</p>
-    <div class="read-more-button">
-        <a asp-action="Detail">READ MORE</a>
-    </div>
-</li>
-}
+            <li class="blog-li">
+                <a asp-action="Detail"><img src="@("/images/" + item.Picture.path)" alt="@item.Picture.name" /></a>
+                <a asp-action="Detail">@item.Article.header</a>
+                <br />
+                <span>
+                    @item.Article.author
+                    |
+                    <span class="gray-div">
+                        @item.Article.time.ToLocalTime()
+                    </span>
+                </span>
+                <hr />
+                <p>@item.Article.text.Substring(0, 170)...</p>
+                <div class="read-more-button">
+                    <a asp-action="Detail">READ MORE</a>
+                </div>
+            </li>
+        }
     </ul>
 
     <div class="blog-menu-container">
-        <div class="blog-menu">
-            <div class="search-div">
-                <h3>Search</h3>
-                <form>
-                    <input type="text" placeholder="Search our store" />
-                    <input type="submit" value="Search" />
-                </form>
-            </div>
-            <div class="menu-div">
-                <h3>Custom Menu</h3>
-                <a asp-area="" asp-controller="Home" asp-action="Index"><p>Home</p></a>
-                <a asp-area="" asp-controller="Home" asp-action="Shop"><p>Shop</p></a>
-                <a asp-area="" asp-controller="Product" asp-action="First"><p>Products</p></a>
-                <a asp-area="" asp-controller="Blog" asp-action="Index"><p>Blog</p></a>
-                <a asp-area="" asp-controller="About" asp-action="Index"><p>About</p></a>
-                <a asp-area="" asp-controller="Contact" asp-action="Index"><p>Contact</p></a>
-            </div>
-            <div class="recent-posts-div">
-                <h3>Recent Post</h3>
-                <div class="blog-posts-mini-menu">
-                    <div class="mini-posts">
-                        <div>
-                            <img src="/images/articles/0_prev.jpg" alt="blog-picture" />
-                        </div>
-                        <div>
-                            <a asp-area="" asp-controller="" asp-action="">Nadpis 1</a>
-                            <p>13.11. 2020</p>
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="mini-posts">
-                        <div>
-                            <img src="/images/articles/1_prev.jpg" alt="blog-picture" />
-                        </div>
-                        <div>
-                            <a asp-area="" asp-controller="" asp-action="">Nadpis 2</a>
-                            <p>12.11. 2020</p>
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="mini-posts">
-                        <div>
-                            <img src="/images/articles/2_prev.jpg" alt="blog-picture" />
-                        </div>
-                        <div>
-                            <a asp-area="" asp-controller="" asp-action="">Nadpis 2</a>
-                            <p>11.11. 2020</p>
-                        </div>
-                    </div>
-                    <hr />
-                </div>
-            </div>
-            <div class="archive-div">
-                <h3>Archive</h3>
-                <!--????-->
-            </div>
-            <div class="tag-div">
-                <h3>Tags</h3>
-                <div class="blog-tags">
-                    <input type="button" value="Bestselliong" />
-                    <input type="button" value="Collection" />
-                    <input type="button" value="Dress" />
-                    <input type="button" value="Fashion" />
-                    <input type="button" value="Man" />
-                </div>
-            </div>
-        </div>
+        <vc:blog-menu-component></vc:blog-menu-component>
     </div>
     <vc:page-select-component></vc:page-select-component>
 </div>

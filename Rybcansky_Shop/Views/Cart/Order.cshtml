@@ -1,1 +1,78 @@
-﻿<p>formulář</p>                                                                                                                                                                                          
+﻿@{
+    Layout = "Order_Layout";
+}
+<link rel="stylesheet" href="~/css/Order_Layout/order.css" />
+
+<div class="left-grid">
+    <div class="header">
+        <img src="/images/debra-logo.png" alt="Alternate Text" />
+        <p><a href="#">Cart&emsp;</a>>&emsp;<strong>Information</strong>&emsp;>&emsp;Shipping&emsp;>&emsp;Payment</p>
+    </div>
+    <div class="order-form">
+        <form asp-action="shipping">
+            <h3>Contact information</h3>
+            <input type="text" placeholder="Email"  autocomplete="off"/><br /><br />
+
+            <h3>Shipping address</h3>
+            <div class="grid-input">
+                <input class="grid-input-left" type="text" placeholder="First name" autocomplete="off"/>
+                <input class="grid-input-right" type="text" placeholder="Last name"  autocomplete="off"/>
+            </div>
+            <input type="text" placeholder="Address"  autocomplete="off"/>
+            <input type="text" placeholder="Apartment"  autocomplete="off"/>
+            <div class="grid-input">
+                <div class="grid-input-left">
+                    <input type="text" placeholder="Postal code" autocomplete="off" />
+                </div>
+                <div class="grid-input-right">
+                    <input type="text" placeholder="City" autocomplete="off" />
+                </div>
+
+            </div>
+            <select>
+                <option value="" disabled selected>Select Country</option>
+                @foreach (var item in this.ViewBag.Countries)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+
+            <div class="form-buttons">
+                <a href="#" class="grid-input-left">< Return to cart</a>
+                <input class="grid-input-right" type="submit" value="Continue to shipping" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="right-grid">
+    <div class="order-item-prev">
+        <img src="/images/xbox_new_01.jpg" />
+        <div>
+            <p>Xbox - ten nový</p>
+            <p class="order-item-prev-variant">1TB, černá</p>
+        </div>
+        <span>12 000Kč</span>
+    </div>
+    <div class="order-item-prev">
+        <img src="/images/ps5_01.jpg" />
+        <div>
+            <p>Playstation 5</p>
+            <p class="order-item-prev-variant">835GB, bílá</p>
+        </div>
+        <span>12 500Kč</span>
+    </div>
+    <hr />
+    <div class="subtotal-price">
+        <p class="grid-input-left">Subtotal</p>
+        <p class="grid-input-right">24 500Kč</p>
+    </div>
+    <div class="subtotal-price">
+        <p class="grid-input-left">Shipping</p>
+        <p class="grid-input-right order-item-prev-variant">Calculated at next step</p>
+    </div>
+    <hr />
+    <div class="subtotal-price">
+        <p class="grid-input-left">Shipping</p>
+        <h3 class="grid-input-right">24 500Kč</h3>
+    </div>
+</div>

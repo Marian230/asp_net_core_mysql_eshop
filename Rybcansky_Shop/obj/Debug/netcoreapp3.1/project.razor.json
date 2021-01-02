@@ -12503,6 +12503,89 @@
         }
       },
       {
+        "HashCode": 1388197836,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__BlogMenuComponentViewComponentTagHelper",
+        "AssemblyName": "Rybcansky_Shop",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:blog-menu-component"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__BlogMenuComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "BlogMenuComponent"
+        }
+      },
+      {
+        "HashCode": -956293696,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__OverlayComponentViewComponentTagHelper",
+        "AssemblyName": "Rybcansky_Shop",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:overlay-component",
+            "Attributes": [
+              {
+                "Name": "name"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "name",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "name"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__OverlayComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "OverlayComponent"
+        }
+      },
+      {
+        "HashCode": -1192595821,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__PageSelectComponentViewComponentTagHelper",
+        "AssemblyName": "Rybcansky_Shop",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:page-select-component"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__PageSelectComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "PageSelectComponent"
+        }
+      },
+      {
+        "HashCode": 752158316,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__TagsComponentViewComponentTagHelper",
+        "AssemblyName": "Rybcansky_Shop",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:tags-component"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__TagsComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "TagsComponent"
+        }
+      },
+      {
         "HashCode": 1912741130,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -14493,6 +14576,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shop\\Index.cshtml",
+      "TargetPath": "Views\\Shop\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shared\\Components\\ProductDetailComponent\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\ProductDetailComponent\\Default.cshtml",
       "FileKind": "mvc"
@@ -14505,6 +14593,11 @@
     {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Administration\\Index.cshtml",
       "TargetPath": "Views\\Administration\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\wwwroot\\html\\Order.cshtml",
+      "TargetPath": "wwwroot\\html\\Order.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14573,6 +14666,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\About\\Index.cshtml",
+      "TargetPath": "Views\\About\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Articles\\Create.cshtml",
       "TargetPath": "Views\\Articles\\Create.cshtml",
       "FileKind": "mvc"
@@ -14590,6 +14688,16 @@
     {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Payment_Methods\\Confirm.cshtml",
       "TargetPath": "Views\\Payment_Methods\\Confirm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shared\\Components\\TagsComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\TagsComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Contact\\Index.cshtml",
+      "TargetPath": "Views\\Contact\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14628,6 +14736,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shared\\Components\\PageSelectComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\PageSelectComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -14658,6 +14771,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shared\\Components\\BlogMenuComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\BlogMenuComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Articles\\Index.cshtml",
       "TargetPath": "Views\\Articles\\Index.cshtml",
       "FileKind": "mvc"
@@ -14675,6 +14793,11 @@
     {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Products\\Confirm.cshtml",
       "TargetPath": "Views\\Products\\Confirm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shared\\Components\\OverlayComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\OverlayComponent\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
