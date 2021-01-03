@@ -8,6 +8,8 @@ namespace Rybcansky_Shop.Models
 {
     public class Variant : TemplateModel
     {
+        public int? id_Size { get; set; }
+
         public int id_Product { get; set; }
 
         public int? size { get; set; }

@@ -46,6 +46,14 @@ namespace Rybcansky_Shop.Models
 
         public DbSet<Product> Product { get; set; }
 
+        public DbSet<Size> Size { get; set; }
+
+        public DbSet<Product_Size> Product_Size { get; set; }
+
+        public DbSet<Article_Tag> Article_Tag { get; set; }
+
+        public DbSet<Product_Tag> Product_Tag { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySQL("server=mysqlstudenti.litv.sssvt.cz;database=4b2_rybcanskymarian_db1;user=rybcanskymarian;password=123456");

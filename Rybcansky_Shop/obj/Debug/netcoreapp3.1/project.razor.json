@@ -14596,11 +14596,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\wwwroot\\html\\Order.cshtml",
-      "TargetPath": "wwwroot\\html\\Order.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Cart\\Order.cshtml",
       "TargetPath": "Views\\Cart\\Order.cshtml",
       "FileKind": "mvc"
@@ -14661,6 +14656,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Cart\\Shipping.cshtml",
+      "TargetPath": "Views\\Cart\\Shipping.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Admins\\Delete.cshtml",
       "TargetPath": "Views\\Admins\\Delete.cshtml",
       "FileKind": "mvc"
@@ -14668,6 +14668,11 @@
     {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\About\\Index.cshtml",
       "TargetPath": "Views\\About\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shared\\Order_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\Order_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14786,6 +14791,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Cart\\Payment.cshtml",
+      "TargetPath": "Views\\Cart\\Payment.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Products\\Create.cshtml",
       "TargetPath": "Views\\Products\\Create.cshtml",
       "FileKind": "mvc"
@@ -14808,6 +14818,11 @@
     {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shipping_Methods\\Confirm.cshtml",
       "TargetPath": "Views\\Shipping_Methods\\Confirm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Cart\\Complete.cshtml",
+      "TargetPath": "Views\\Cart\\Complete.cshtml",
       "FileKind": "mvc"
     },
     {

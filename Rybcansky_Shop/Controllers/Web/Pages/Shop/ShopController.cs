@@ -24,14 +24,7 @@ namespace Rybcansky_Shop.Controllers.Web.Pages.Shop
 
             this.ViewBag.Vendors = this.context.Vendor.Select(x => x.name).ToList();
 
-            this.ViewBag.Sizes = new List<string>()
-            {
-                "S",
-                "M",
-                "L",
-                "XL",
-                "XXL"
-            };
+            this.ViewBag.Sizes = this.context.Size.ToList();
 
             this.ViewBag.Tags = new List<string>()
             {

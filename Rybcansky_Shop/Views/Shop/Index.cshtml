@@ -73,9 +73,10 @@
             <div class="shop-size-div">
                 <h4>Size</h4>
                 <div class="shop-sizes">
-                    @for (int i = 0; i < this.ViewBag.Sizes.Count; i++)
+
+                    @foreach (Size item in this.ViewBag.Sizes)
                     {
-                        <a href="#">@this.ViewBag.Sizes[i]</a>
+                        <a href="#">@item.size</a>
                     }
                 </div>
             </div>

@@ -9,8 +9,6 @@ namespace Rybcansky_Shop.Models
 {
     public class Tag : TemplateModel
     {
-        public int? id_Article { get; set; }
-
         public string text { get; set; }
     }
 }

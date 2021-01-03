@@ -12,7 +12,7 @@ namespace Rybcansky_Shop.Controllers
     {
         public IActionResult Index()
         {
-            List<Order_Item> item = this.context.Order_Item.ToList();
+            List<Product_Tag> item = this.context.Product_Tag.ToList();
 
             List<string> returnList = new List<string>();
 

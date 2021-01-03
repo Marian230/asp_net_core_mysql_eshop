@@ -304,14 +304,16 @@ select {
         font-weight: bold;
     }
 
-.form-buttons input[type=submit] {
-    padding: 1.5em 1em;
+.finished-button a {
+    padding: 1em 1em;
     background-color: var(--myPink);
     border: none;
     border-radius: 5px;
     margin-bottom: 3em;
+    color: black;
+    font-size: 1rem;
 }
 
-.form-buttons input[type=submit]:hover {
+.form-buttons input[type=button]:hover {
     background-color: #ff6666;
 }
