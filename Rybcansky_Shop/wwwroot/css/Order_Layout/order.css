@@ -142,18 +142,17 @@ input[type=submit]:hover {
     margin-bottom: 1em;
 }
 
-.order-item-prev img 
-{
-    width: 100%;
-    grid-column: 1/2;
-    border: 1px solid #dbdddf;
-    border-radius: 11px;
-}
+    .order-item-prev img {
+        width: 100%;
+        grid-column: 1/2;
+        border: 1px solid #dbdddf;
+        border-radius: 11px;
+    }
 
-.order-item-prev div {
-    grid-column: 3/4;
-    font-size: 0.95rem;
-}
+    .order-item-prev div {
+        grid-column: 3/4;
+        font-size: 0.95rem;
+    }
 
 .order-item-prev-variant {
     font-size: 0.7rem;
@@ -177,4 +176,142 @@ input[type=submit]:hover {
     grid-template-columns: 1fr 11em 1fr;
     align-items: center;
     margin-bottom: 0.3em;
+}
+
+/* Shipping */
+.shippping-check-form {
+    border: 1px solid #d9d9d9;
+    padding: 0.1em 1em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+    .shippping-check-form label {
+        color: #737373;
+        font-size: 0.9rem;
+    }
+
+.check-under-form {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    align-items: center;
+}
+
+    .check-under-form label {
+        grid-column: 1/2;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        margin-top: 0.1em;
+    }
+
+    .check-under-form input[type=text] {
+        grid-column: 2/3;
+        border: none;
+        background-color: white;
+        margin-bottom: 0.2em;
+        padding-bottom: 0.2em;
+        padding-top: 0.2em;
+    }
+
+.shippping-check-form hr {
+    border: none;
+    height: 1px;
+    background-color: #e1e1e1;
+    margin: 0 0.1em;
+}
+
+.different-billing-address {
+    display: none;
+    margin-top: 1em;
+    border: 1px solid #d9d9d9;
+    border-radius: 7px;
+    padding: 1em 1em 0em 1em;
+    background-color: #fafafa;
+}
+
+select {
+    color: #333333;
+}
+
+/* Finish */
+.thx {
+    display: grid;
+    grid-template-columns: 3em 1em 4fr;
+}
+
+    .thx img {
+        grid-column: 1/2;
+        width: 3em;
+    }
+
+.thx .thx-text {
+    grid-column: 3/4;
+}
+
+.thx p {
+    color: #737373;
+    font-size: 0.8rem;
+}
+
+.thx h3 {
+    font-weight: normal;
+    font-size: 1.4rem;
+}
+
+.confirm-tab {
+    margin: 2em 0;
+    border: 1px solid #e5e5e5;
+    border-radius: 7px;
+    padding: 1em;
+}
+
+.confirm-tab h4 {
+    font-weight: normal;
+}
+
+.confirm-tab p {
+    font-size: 0.9rem;
+}
+
+.column-div {
+    display: block;
+}
+
+.column-div h5 {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.column-div p {
+    font-size: 0.9rem;
+}
+
+.customer-tab {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 18em;
+    margin-bottom: 0.5em;
+}
+
+.customer-tab div {
+    margin-bottom: 1em;
+}
+
+    .customer-tab h4 {
+        margin-bottom: 1em;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+.form-buttons input[type=submit] {
+    padding: 1.5em 1em;
+    background-color: var(--myPink);
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 3em;
+}
+
+.form-buttons input[type=submit]:hover {
+    background-color: #ff6666;
 }

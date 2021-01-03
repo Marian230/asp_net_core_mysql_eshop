@@ -41,7 +41,39 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
 
         public IActionResult Shipping()
         {
+            this.ViewBag.ShippingMethods = this.context.Shipping_Method.ToList();
+
             return View();
+        }
+
+        public IActionResult Payment()
+        {
+            this.ViewBag.PaymentMethods = this.context.Payment_Methods.ToList();
+                        this.ViewBag.Countries = new List<string>()
+            {
+                "Czechia",
+                "Slovakia",
+                "Poland",
+                "Hungary",
+                "Germany",
+                "Austria"
+            };
+
+            return View();
+        }
+
+        public IActionResult Complete()
+        {
+
+
+            return View();
+        }
+
+        public IActionResult FinishOrder()
+        {
+
+
+            return RedirectToAction("Complete");
         }
 
         [HttpPost]

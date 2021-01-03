@@ -1,4 +1,11 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function DifferentBillingAddress() {
+    var selectEl = document.getElementById('different-billing-address');
+    var form = document.getElementsByClassName('different-billing-address');
 
-// Write your JavaScript code.
+    if (selectEl.value == 1) {
+        form[0].style.display = 'block';
+    }
+    else if (selectEl.value == 0) {
+        form[0].style.display = 'none';
+    }
+}
