@@ -215,9 +215,9 @@ header a {
         font-size: 1rem;
     }
 
-    .cart-buttons a:hover {
-        background-color: #666666;
-    }
+        .cart-buttons a:hover {
+            background-color: #666666;
+        }
 
 .cart-total-price {
     margin: 1em 0 0 0;
@@ -601,6 +601,22 @@ footer h5 {
             color: white;
         }
 
+.blog-menu .blog-tags a {
+    width: auto;
+    padding: 0.8em 0.9em;
+    margin: 0.2em;
+    background-color: white;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 0.9rem;
+}
+
+    .blog-menu .blog-tags a:hover {
+        background-color: var(--myPink);
+        color: white;
+    }
+
 /* BlogMenu Component */
 
 .blog-menu {
@@ -691,7 +707,6 @@ footer h5 {
     border-top: 1px solid var(--borderColor);
     border-right: 1px solid var(--borderColor);
     box-shadow: 0px 4px 3px lightgray;
-    
 }
 
     .cart-detail > span {
@@ -1282,34 +1297,34 @@ footer h5 {
     font-size: 1rem;
 }
 
-.blog-detail-text p {
-    margin-top: 1em;
-}
+    .blog-detail-text p {
+        margin-top: 1em;
+    }
 
 .blog-detail-tags {
     margin: 2em 0;
     text-align: left;
 }
 
-.blog-detail-tags hr {
-    border: none;
-    height: 1px;
-    background-color: #e0e0e0;
-}
+    .blog-detail-tags hr {
+        border: none;
+        height: 1px;
+        background-color: #e0e0e0;
+    }
 
-.blog-detail-tags p {
-    display: inline;
-    color: #999;
-}
+    .blog-detail-tags p {
+        display: inline;
+        color: #999;
+    }
 
     .blog-detail-tags a {
         color: black;
         font-size: 1rem;
     }
 
-    .blog-detail-tags a:hover {
-        color: var(--myPink);
-    }
+        .blog-detail-tags a:hover {
+            color: var(--myPink);
+        }
 
 .article-detail-right {
     grid-column: 3/4;
@@ -1332,22 +1347,22 @@ footer h5 {
     box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
-.comment h4 {
-    color: #999;
-    margin-bottom: 0.2em;
-    margin-top: 0;
-}
+    .comment h4 {
+        color: #999;
+        margin-bottom: 0.2em;
+        margin-top: 0;
+    }
 
- .comment-time {
+.comment-time {
     margin-bottom: 1em;
     display: block;
     color: #999;
     font-size: 0.9rem;
 }
 
- .comment p {
-     font-size: 1rem;
- }
+.comment p {
+    font-size: 1rem;
+}
 
 
 .blog-detail-comment {
@@ -1359,10 +1374,10 @@ footer h5 {
     grid-template-columns: auto 2em auto;
 }
 
-    .comment-name {
-        grid-column: 1/2;
-    }
+.comment-name {
+    grid-column: 1/2;
+}
 
-    .comment-email {
-        grid-column: 3/4;
-    }
+.comment-email {
+    grid-column: 3/4;
+}

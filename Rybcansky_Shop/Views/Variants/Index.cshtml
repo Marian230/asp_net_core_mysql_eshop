@@ -1,4 +1,9 @@
-﻿<a asp-action="Index" asp-controller="Products" class="btn btn-info">Zpátky na seznam produktů</a>
+﻿@{
+    Layout = "Administration_Layout";
+}
+
+
+<a asp-action="Index" asp-controller="Products" class="btn btn-info">Zpátky na seznam produktů</a>
 <a asp-controller="Variants" asp-action="Create" class="btn btn-primary">Vytvořit novou variantu</a>
 
 <table class="table">

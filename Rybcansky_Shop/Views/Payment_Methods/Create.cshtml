@@ -1,8 +1,9 @@
 ﻿@model Rybcansky_Shop.Models.Payment_Methods
 
 @{
-    ViewData["Title"] = "Create";
+    Layout = "Administration_Layout";
 }
+
 
 <div class="row">
     <div class="col-md-4">
@@ -23,7 +24,3 @@
 <div>
     <a asp-action="Index">Vrátit zpět</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

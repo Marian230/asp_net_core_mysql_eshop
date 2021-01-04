@@ -1,4 +1,9 @@
-﻿@model Rybcansky_Shop.Models.Product
+﻿@{
+    Layout = "Administration_Layout";
+}
+
+
+@model Rybcansky_Shop.Models.Product
 
 
 <div class="row">
@@ -9,11 +14,6 @@
                 <label asp-for="name" class="control-label"></label>
                 <input asp-for="name" class="form-control" />
                 <span asp-validation-for="name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
-                <input asp-for="name" class="form-control" />
-                <span asp-validation-for="price_Standart" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="price_Standart" class="control-label"></label>
@@ -55,9 +55,9 @@
                 <label>Kategorie</label>
                 <select class="form-control" asp-for="id_Category">
                     @foreach (Category category in this.ViewBag.CategoryQuery)
-                     {
+                    {
                         <option value="@category.id">@category.id - @category.name</option>
-                     }
+                    }
                 </select>
             </div>
 
@@ -65,9 +65,9 @@
                 <label>Prodejce</label>
                 <select class="form-control" asp-for="id_Vendor">
                     @foreach (Vendor vendor in this.ViewBag.VendorQuery)
-                     {
+                    {
                         <option value="@vendor.id">@vendor.id - @vendor.name</option>
-                     }
+                    }
                 </select>
             </div>
 
@@ -82,7 +82,3 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

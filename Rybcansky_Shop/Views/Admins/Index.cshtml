@@ -1,4 +1,10 @@
-﻿<a asp-controller="Admins" asp-action="Create" class="btn btn-primary">Vytvořit nového admina</a>
+﻿@{
+    Layout = "Administration_Layout";
+}
+
+
+
+<a asp-controller="Admins" asp-action="Create" class="btn btn-primary">Vytvořit nového admina</a>
 
 <table class="table">
     <tr>
@@ -6,11 +12,11 @@
     </tr>
 
     @foreach (Admin item in this.ViewBag.Items)
-     {
+    {
         <tr>
             <td>@item.username</td>
             <td><a asp-controller="Admins" asp-action="Edit" asp-route-id="@item.id">Editovat</a></td>
             <td><a asp-controller="Admins" asp-action="Delete" asp-route-id="@item.id">Smazat</a></td>
         </tr>
-     }
+    }
 </table>

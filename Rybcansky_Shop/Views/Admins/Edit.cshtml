@@ -1,8 +1,10 @@
-﻿@model Rybcansky_Shop.Models.Admin
-
-@{
-    ViewData["Title"] = "Edit";
+﻿@{
+    Layout = "Administration_Layout";
 }
+
+
+@model Rybcansky_Shop.Models.Admin
+
 
 <div class="row">
     <div class="col-md-4">
@@ -15,7 +17,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="password" class="control-label"></label>
-                <input asp-for="password" class="form-control" value=""/>
+                <input asp-for="password" class="form-control" value="" />
                 <span asp-validation-for="password" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -29,6 +31,3 @@
     <a asp-action="Index">Zpátky na seznam adminů</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

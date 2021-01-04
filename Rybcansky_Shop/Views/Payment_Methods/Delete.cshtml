@@ -1,16 +1,21 @@
-﻿@model Rybcansky_Shop.Models.Payment_Methods
+﻿@{
+    Layout = "Administration_Layout";
+}
+
+
+@model Rybcansky_Shop.Models.Payment_Methods
 
 <div>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.method)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.method)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Vrátit zpět</a>

@@ -10,5 +10,7 @@ namespace Rybcansky_Shop.Models
     public class Tag : TemplateModel
     {
         public string text { get; set; }
+
+        public bool is_Product { get; set; }
     }
 }

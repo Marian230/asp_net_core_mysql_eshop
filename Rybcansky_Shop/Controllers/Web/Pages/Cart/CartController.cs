@@ -49,7 +49,7 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
         public IActionResult Payment()
         {
             this.ViewBag.PaymentMethods = this.context.Payment_Methods.ToList();
-                        this.ViewBag.Countries = new List<string>()
+            this.ViewBag.Countries = new List<string>()
             {
                 "Czechia",
                 "Slovakia",

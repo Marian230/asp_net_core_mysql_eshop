@@ -1,4 +1,9 @@
-﻿@model Rybcansky_Shop.Models.Article
+﻿@{
+    Layout = "Administration_Layout";
+}
+
+
+@model Rybcansky_Shop.Models.Article
 
 @{
     ViewData["Title"] = "Edit";
@@ -45,7 +50,3 @@
 <div>
     <a asp-action="Index">Zpátky na seznam článků</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

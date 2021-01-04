@@ -1,27 +1,28 @@
 ﻿@model Rybcansky_Shop.Models.Category
 
 @{
-    ViewData["Title"] = "Delete";
+    Layout = "Administration_Layout";
 }
+
 
 <div>
     <h4>Category</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.name)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.description)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.description)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="submit" value="Smazat" class="btn btn-danger" /> |
         <a asp-action="Index">zpátky na seznam</a>

@@ -1,4 +1,9 @@
-﻿@model Rybcansky_Shop.Models.Category
+﻿@{
+    Layout = "Administration_Layout";
+}
+
+
+@model Rybcansky_Shop.Models.Category
 
 @{
     ViewData["Title"] = "Create";
@@ -28,7 +33,3 @@
 <div>
     <a asp-action="Index">Zpátky na seznam</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

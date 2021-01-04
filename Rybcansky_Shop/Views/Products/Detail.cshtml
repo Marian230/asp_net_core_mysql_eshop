@@ -1,4 +1,9 @@
-﻿@model Rybcansky_Shop.Models.Product
+﻿@{
+    Layout = "Administration_Layout";
+}
+
+
+@model Rybcansky_Shop.Models.Product
 @using Rybcansky_Shop.Controllers.ModelController.Product;
 <div>
     <dl class="row">
@@ -47,14 +52,14 @@
         <dd class="col-sm-10">
             <select>
                 @foreach (VariantClass item in this.ViewBag.VariantQuery)
-                 {
-                     <option>
-                          @item.color |
-                         (@item.price_Standart /
-                          @item.price_Discount) |
-                          ks: @item.stock_Number 
-                     </option>
-                 }
+                {
+                    <option>
+                        @item.color |
+                        (@item.price_Standart /
+                        @item.price_Discount) |
+                        ks: @item.stock_Number
+                    </option>
+                }
             </select>
         </dd>
 

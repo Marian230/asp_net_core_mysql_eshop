@@ -1,13 +1,17 @@
-﻿<table class="table">
+﻿@{
+    Layout = "Administration_Layout";
+}
+
+<table class="table">
     <tr>
         <td>Název modelu</td>
         <td></td>
     </tr>
     @foreach (string modelString in this.ViewBag.Models)
-     {
+    {
         <tr>
             <td>@modelString</td>
             <td><a asp-controller="@modelString" asp-action="Index">Edit</a></td>
         </tr>
-     }
+    }
 </table>

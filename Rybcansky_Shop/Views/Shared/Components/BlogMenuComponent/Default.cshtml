@@ -50,5 +50,13 @@
             <hr />
         </div>
     </div>
-    <vc:tags-component></vc:tags-component>
+    <div class="tag-div">
+        <h3>Tags</h3>
+        <div class="blog-tags">
+            @foreach (Tag item in this.ViewBag.Tags)
+             {
+                 <a href="#">@item.text</a>
+             }
+        </div>
+    </div>
 </div>

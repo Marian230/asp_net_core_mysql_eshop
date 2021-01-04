@@ -12569,23 +12569,6 @@
         }
       },
       {
-        "HashCode": 752158316,
-        "Kind": "MVC.ViewComponent",
-        "Name": "__Generated__TagsComponentViewComponentTagHelper",
-        "AssemblyName": "Rybcansky_Shop",
-        "CaseSensitive": false,
-        "TagMatchingRules": [
-          {
-            "TagName": "vc:tags-component"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "ITagHelper",
-          "Common.TypeName": "__Generated__TagsComponentViewComponentTagHelper",
-          "MVC.ViewComponent.Name": "TagsComponent"
-        }
-      },
-      {
         "HashCode": 1912741130,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -14696,11 +14679,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shared\\Components\\TagsComponent\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\TagsComponent\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Contact\\Index.cshtml",
       "TargetPath": "Views\\Contact\\Index.cshtml",
       "FileKind": "mvc"
@@ -14818,6 +14796,11 @@
     {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shipping_Methods\\Confirm.cshtml",
       "TargetPath": "Views\\Shipping_Methods\\Confirm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shared\\Administration_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\Administration_Layout.cshtml",
       "FileKind": "mvc"
     },
     {

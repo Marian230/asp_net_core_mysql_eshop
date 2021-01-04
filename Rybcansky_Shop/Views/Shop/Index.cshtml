@@ -1,4 +1,5 @@
 ﻿<vc:overlay-component name="Shop"></vc:overlay-component>
+<script src="~/js/shop/shop_script.js"></script>
 
 <div class="content-wrap shop-div">
     <div class="shop-left">
@@ -64,19 +65,22 @@
             <hr />
             <div class="shop-vendors-div">
                 <h4>Vendors</h4>
-                @for (int i = 0; i < this.ViewBag.Vendors.Count; i++)
-                {
-                    <a href="#">@this.ViewBag.Vendors[i]</a>
-                }
+                <div id="vendor_select_box">
+                    @for (int i = 0; i < this.ViewBag.Vendors.Count; i++)
+                    {
+                        <a asp-action="VendorSort" asp-route-id="@this.ViewBag.Vendors[i].id">
+                            @this.ViewBag.Vendors[i].name
+                        </a>
+                    }
+                </div>
             </div>
             <hr />
             <div class="shop-size-div">
                 <h4>Size</h4>
                 <div class="shop-sizes">
-
                     @foreach (Size item in this.ViewBag.Sizes)
                     {
-                        <a href="#">@item.size</a>
+                        <a asp-action="SizeSort" asp-route-id="@item.id">@item.size</a>
                     }
                 </div>
             </div>
@@ -84,9 +88,10 @@
             <div class="shop-tags-div">
                 <h4>Tags</h4>
                 <div class="shop-sizes">
-                    @for (int i = 0; i < this.ViewBag.Tags.Count; i++)
+
+                    @foreach (Tag item in this.ViewBag.Tags)
                     {
-                        <a href="#">@this.ViewBag.Tags[i]</a>
+                        <a asp-action="TagSort" asp-route-id="@item.id">@item.text</a>
                     }
                 </div>
             </div>
