@@ -7,8 +7,8 @@
         @foreach (BlogListClass item in this.ViewBag.Data)
         {
             <li class="blog-li">
-                <a asp-action="Detail"><img src="@("/images/" + item.Picture.path)" alt="@item.Picture.name" /></a>
-                <a asp-action="Detail">@item.Article.header</a>
+                <a asp-action="Detail" asp-route-id="@item.Article.id"><img src="@("/images/" + item.Picture.path)" alt="@item.Picture.name" /></a>
+                <a asp-action="Detail" asp-route-id="@item.Article.id">@item.Article.header</a>
                 <br />
                 <span>
                     @item.Article.author
@@ -20,7 +20,7 @@
                 <hr />
                 <p>@item.Article.text.Substring(0, 170)...</p>
                 <div class="read-more-button">
-                    <a asp-action="Detail">READ MORE</a>
+                    <a asp-action="Detail" asp-route-id="@item.Article.id">READ MORE</a>
                 </div>
             </li>
         }

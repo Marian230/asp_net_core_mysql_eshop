@@ -12422,6 +12422,23 @@
         }
       },
       {
+        "HashCode": -880069066,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__ComponentTemplateViewComponentTagHelper",
+        "AssemblyName": "Rybcansky_Shop",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:component-template"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__ComponentTemplateViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "ComponentTemplate"
+        }
+      },
+      {
         "HashCode": 1999004494,
         "Kind": "MVC.ViewComponent",
         "Name": "__Generated__CartTitleComponentViewComponentTagHelper",
@@ -12436,6 +12453,23 @@
           "Runtime.Name": "ITagHelper",
           "Common.TypeName": "__Generated__CartTitleComponentViewComponentTagHelper",
           "MVC.ViewComponent.Name": "CartTitleComponent"
+        }
+      },
+      {
+        "HashCode": -1146192838,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__RightGridComponentViewComponentTagHelper",
+        "AssemblyName": "Rybcansky_Shop",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:right-grid-component"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__RightGridComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "RightGridComponent"
         }
       },
       {
@@ -14646,6 +14680,11 @@
     {
       "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Admins\\Delete.cshtml",
       "TargetPath": "Views\\Admins\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ps4ma\\Desktop\\asp_net_core_mysql_eshop\\Rybcansky_Shop\\Views\\Shared\\Components\\RightGridComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\RightGridComponent\\Default.cshtml",
       "FileKind": "mvc"
     },
     {

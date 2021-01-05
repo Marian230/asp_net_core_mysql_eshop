@@ -1014,3 +1014,4 @@ C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcore
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Payment.cshtml.g.cs
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Complete.cshtml.g.cs
 C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Administration_Layout.cshtml.g.cs
+C:\Users\ps4ma\Desktop\asp_net_core_mysql_eshop\Rybcansky_Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\RightGridComponent\Default.cshtml.g.cs

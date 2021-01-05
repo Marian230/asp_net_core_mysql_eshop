@@ -9,7 +9,7 @@ namespace Rybcansky_Shop.Components
 {
     public class ProductComponent : ViewComponent
     {
-        MyContext context = new MyContext();
+        private MyContext context = new MyContext();
 
         public IViewComponentResult Invoke(Product product)
         {

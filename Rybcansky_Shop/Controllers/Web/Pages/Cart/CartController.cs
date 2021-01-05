@@ -15,16 +15,13 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
             List<CartClass> items = this.Query();
 
             this.ViewBag.Data = items;
-            this.ViewBag.totalPrice = this.TotalPrice(items);
+            this.ViewBag.totalPrice = this.GetTotalPrice();
 
             return View();
         }
 
         public IActionResult Order()
         {
-            /*List<CartClass> cartList = this.Query();
-            this.ViewBag.Items = this.context.Cart_Item;
-            this.ViewBag.Price = this.TotalPrice(cartList);*/
             this.ViewBag.Countries = new List<string>()
             {
                 "Czechia",
@@ -39,15 +36,42 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
             return View();
         }
 
-        public IActionResult Shipping()
+        public IActionResult Shipping(FormClass items)
         {
-            this.ViewBag.ShippingMethods = this.context.Shipping_Method.ToList();
+            int idOrder = this.GetIdOrder();
+            this.context.Contact_Info.Add(items.Contact_Info);
+            this.context.SaveChanges();
+
+            this.context.Billing_Adress.Add(items.billing_Adress);
+            this.context.SaveChanges();
+
+            //Contact_info id
+            var contact_infos = this.context.Contact_Info.ToList();
+            int idContac = contact_infos[contact_infos.Count() - 1].id;
+
+            // Billing_info id
+            var billing_addresses = this.context.Billing_Adress.ToList();
+            int idBilling = billing_addresses[billing_addresses.Count() - 1].id;
+
+            this.context.Order.Where(x => x.id == this.GetIdOrder()).FirstOrDefault().id_Contact_Info = idContac;
+            this.context.Order.Where(x => x.id == this.GetIdOrder()).FirstOrDefault().id_Primary_Billing_Adress = idBilling;
+            this.context.SaveChanges();
+
+            this.ViewBag.PaymentMethods = this.context.Payment_Methods.ToList();
+
+            Order order = this.context.Order.Where(x => x.id == idOrder).ToList()[0];
+            this.ViewBag.Email = this.context.Contact_Info.Where(x => x.id == order.id_Contact_Info).ToList()[0].email;
+
+            Billing_Adress address = this.context.Billing_Adress.Where(x => x.id == order.id_Primary_Billing_Adress).ToList()[0];
+            string shippTo = string.Concat(address.address, ", ", address.appartmant, ", ", address.postal_Code, ", ", address.city, ", ", address.country);
+            this.ViewBag.Shipping = shippTo;
 
             return View();
         }
 
-        public IActionResult Payment()
+        public IActionResult Payment(FormClass items)
         {
+            int idOrder = this.GetIdOrder();
             this.ViewBag.PaymentMethods = this.context.Payment_Methods.ToList();
             this.ViewBag.Countries = new List<string>()
             {
@@ -59,7 +83,37 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
                 "Austria"
             };
 
+            this.context.Order
+                .Where(x => x.id == idOrder)
+                .FirstOrDefault().id_Payment_Methods = Convert.ToInt32(items.Payment_Methods.method);
+            this.context.SaveChanges();
+
+            Order order = this.context.Order.Where(x => x.id == idOrder).ToList()[0];
+            this.ViewBag.Email = this.context.Contact_Info.Where(x => x.id == order.id_Contact_Info).ToList()[0].email;
+
+            Billing_Adress address = this.context.Billing_Adress.Where(x => x.id == order.id_Primary_Billing_Adress).ToList()[0];
+            string shippTo = string.Concat(address.address, ", ", address.appartmant, ", ", address.postal_Code, ", ", address.city, ", ", address.country);
+            this.ViewBag.Shipping = shippTo;
+
             return View();
+        }
+
+        public IActionResult FinishOrder(FormClass items)
+        {
+            Billing_Adress address = items.billing_Adress;
+
+            this.context.Billing_Adress.Add(address);
+            this.context.SaveChanges();
+
+            //int id = this.context.Billing_Adress.Last().id;
+            List<Billing_Adress> tmpAddresses = this.context.Billing_Adress.ToList();
+            int id = tmpAddresses[tmpAddresses.Count() - 1].id;
+
+            this.context.Order.Where(x => x.id == this.GetIdOrder()).FirstOrDefault().id_Different_Billing_Adress = id;
+            this.context.Order.Where(x => x.id == this.GetIdOrder()).FirstOrDefault().finished = true;
+            this.context.SaveChanges();
+
+            return RedirectToAction("Complete");
         }
 
         public IActionResult Complete()
@@ -67,13 +121,6 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
 
 
             return View();
-        }
-
-        public IActionResult FinishOrder()
-        {
-
-
-            return RedirectToAction("Complete");
         }
 
         [HttpPost]
@@ -109,6 +156,37 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
             this.context.Order_Item.Add(item);
             this.context.SaveChanges();
             return RedirectToAction("Index", "Home");
+        }
+
+        private double GetTotalPrice()
+        {
+            int cookie_id = Convert.ToInt32(this.HttpContext.Session.GetString(UserController.userId));
+            int idOrder = this.context.Order.Where(x => x.cookie_Id == cookie_id).ToList()[0].id;
+
+            var neco = (from order_item in this.context.Order_Item
+                        from product in this.context.Product
+                        from variant in this.context.Variant
+                        where order_item.id_Order == idOrder
+                        where order_item.id_Product == variant.id
+                        where product.id == variant.id_Product
+                        select order_item).ToList();
+
+            double totalprice = 0;
+            foreach (Order_Item item in neco)
+            {
+                Variant variant = this.context.Variant.Where(x => x.id == item.id_Product).ToList()[0];
+                double price = Convert.ToDouble(variant.price_Discount ?? variant.price_Standart);
+
+                totalprice += (item.quantity * price);
+            }
+
+            return totalprice;
+        }
+
+        private int GetIdOrder()
+        {
+            int cookie_id = Convert.ToInt32(this.HttpContext.Session.GetString(UserController.userId));
+            return this.context.Order.Where(x => x.cookie_Id == cookie_id).ToList()[0].id;
         }
 
         [HttpPost]
@@ -152,6 +230,7 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
             return RedirectToAction("Index");
         }
 
+
         private List<CartClass> QueryOld()
         {
             /*var query = (from cartItem in this.context.Cart_Item
@@ -193,6 +272,8 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
 
                          where order.cookie_Id == Convert.ToInt32(this.HttpContext.Session.GetString("userId"))
 
+                         where order.finished == false
+
                          where productPicture.id_Product == product.id
                          where picture.id == productPicture.id_Picture
                          where picture.order == 0
@@ -224,5 +305,16 @@ namespace Rybcansky_Shop.Controllers.Web.Carts
 
             return totalPrice;
         }
+    }
+
+    public class FormClass
+    {
+        public Billing_Adress billing_Adress { get; set; } = new Billing_Adress();
+
+        public Contact_Info Contact_Info { get; set; } = new Contact_Info();
+
+        public Payment_Methods Payment_Methods { get; set; } = new Payment_Methods();
+
+        public Shipping_Method Shipping_Method { get; set; } = new Shipping_Method();
     }
 }

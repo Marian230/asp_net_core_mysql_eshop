@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Rybcansky_Shop.Controllers.Web.Carts.FormClass
+
+@{
     Layout = "Order_Layout";
 }
 <link rel="stylesheet" href="~/css/Order_Layout/order.css" />
@@ -13,12 +15,12 @@
         <div class="shippping-check-form">
             <div class="check-under-form">
                 <label>Contact</label>
-                <input type="text" autocomplete="off" value="+420 605 605 605" disabled />
+                <input type="text" autocomplete="off" value="@this.ViewBag.Email" disabled />
             </div>
             <hr />
             <div class="check-under-form">
                 <label>Ship to</label>
-                <input type="text" autocomplete="off" value="address, apartment, POSTAL CODE city , Czechia" disabled />
+                <input type="text" autocomplete="off" value="@this.ViewBag.Shipping" disabled />
             </div>
             <hr />
             <div class="check-under-form">
@@ -27,9 +29,9 @@
             </div>
         </div>
 
-        <form asp-action="FinishOrder">
+        <form asp-action="FinishOrder" asp-controller="Cart">
             <h3>Payment</h3>
-            <select>
+            <select disabled>
                 <option value="" disabled selected>Select payment method</option>
                 @foreach (Payment_Methods item in this.ViewBag.PaymentMethods)
                 {
@@ -48,22 +50,22 @@
                 <br />
                 <div class="order-form">
                     <h3>Shipping address</h3>
-                    <div class="grid-input">
-                        <input class="grid-input-left" type="text" placeholder="First name" autocomplete="off" />
-                        <input class="grid-input-right" type="text" placeholder="Last name" autocomplete="off" />
-                    </div>
-                    <input type="text" placeholder="Address" autocomplete="off" />
-                    <input type="text" placeholder="Apartment" autocomplete="off" />
+                    <!--<div class="grid-input">
+                            <input class="grid-input-left" type="text" placeholder="First name" autocomplete="off" />
+                            <input class="grid-input-right" type="text" placeholder="Last name" autocomplete="off" />
+                    </div>-->
+                    <input asp-for="billing_Adress.address" type="text" placeholder="Address" autocomplete="off" />
+                    <input asp-for="billing_Adress.appartmant" type="text" placeholder="Apartment" autocomplete="off" />
                     <div class="grid-input">
                         <div class="grid-input-left">
-                            <input type="text" placeholder="Postal code" autocomplete="off" />
+                            <input asp-for="billing_Adress.postal_Code" type="text" placeholder="Postal code" autocomplete="off" />
                         </div>
                         <div class="grid-input-right">
-                            <input type="text" placeholder="City" autocomplete="off" />
+                            <input asp-for="billing_Adress.city" type="text" placeholder="City" autocomplete="off" />
                         </div>
 
                     </div>
-                    <select>
+                    <select asp-for="billing_Adress.country">
                         <option value="" disabled selected>Select Country</option>
                         @foreach (var item in this.ViewBag.Countries)
                         {
@@ -80,35 +82,4 @@
         </form>
     </div>
 </div>
-<div class="right-grid">
-    <div class="order-item-prev">
-        <img src="/images/xbox_new_01.jpg" />
-        <div>
-            <p>Xbox - ten nový</p>
-            <p class="order-item-prev-variant">1TB, černá</p>
-        </div>
-        <span>12 000Kč</span>
-    </div>
-    <div class="order-item-prev">
-        <img src="/images/ps5_01.jpg" />
-        <div>
-            <p>Playstation 5</p>
-            <p class="order-item-prev-variant">835GB, bílá</p>
-        </div>
-        <span>12 500Kč</span>
-    </div>
-    <hr />
-    <div class="subtotal-price">
-        <p class="grid-input-left">Subtotal</p>
-        <p class="grid-input-right">24 500Kč</p>
-    </div>
-    <div class="subtotal-price">
-        <p class="grid-input-left">Shipping</p>
-        <p class="grid-input-right">350 Kč</p>
-    </div>
-    <hr />
-    <div class="subtotal-price">
-        <p class="grid-input-left">Shipping</p>
-        <h3 class="grid-input-right">24 8550Kč</h3>
-    </div>
-</div>
+<vc:right-grid-component></vc:right-grid-component>

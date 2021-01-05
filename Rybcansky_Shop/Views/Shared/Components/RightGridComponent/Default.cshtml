@@ -1,0 +1,36 @@
+﻿@using Rybcansky_Shop.Components;
+
+<div class="right-grid">
+@foreach (Data item in this.ViewBag.Data)
+{
+    <div class="order-item-prev">
+        <img src="/images/@item.picture.path" />
+        <div>
+            <p>@item.product.name</p>
+            <p class="order-item-prev-variant">@item.product.description</p>
+        </div>
+        @if (item.product.price_Discount == null)
+        {
+            <span>@item.product.price_Standart</span>
+        }
+        else
+        {
+            <span>@item.product.price_Discount</span>
+        }
+    </div>
+}
+<hr />
+<div class="subtotal-price">
+    <p class="grid-input-left">Subtotal</p>
+    <p class="grid-input-right">@this.ViewBag.TotalPrice</p>
+</div>
+<div class="subtotal-price">
+    <p class="grid-input-left">Shipping</p>
+    <p class="grid-input-right order-item-prev-variant">Calculated at next step</p>
+</div>
+<hr />
+<div class="subtotal-price">
+    <p class="grid-input-left">Total</p>
+    <h3 class="grid-input-right">@this.ViewBag.TotalPrice</h3>
+</div>
+</div>

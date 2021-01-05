@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Rybcansky_Shop.Controllers.Web.Carts.FormClass
+
+@{
     Layout = "Order_Layout";
 }
 <link rel="stylesheet" href="~/css/Order_Layout/order.css" />
@@ -12,20 +14,20 @@
         <div class="shippping-check-form">
             <div class="check-under-form">
                 <label>Contact</label>
-                <input type="text" autocomplete="off" value="+420 605 605 605" disabled />
+                <input type="text" autocomplete="off" value="@this.ViewBag.Email" disabled />
             </div>
             <hr />
             <div class="check-under-form">
                 <label>Ship to</label>
-                <input type="text" autocomplete="off" value="address, apartment, POSTAL CODE city , Czechia" disabled />
+                <input type="text" autocomplete="off" value="@this.ViewBag.Shipping" disabled />
             </div>
         </div>
 
-        <form asp-action="payment">
+        <form asp-action="payment" asp-controller="Cart">
             <h3>Shipping method</h3>
-            <select>
+            <select asp-for="Payment_Methods.method">
                 <option value="" disabled selected>Select payment method</option>
-                @foreach (Shipping_Method item in this.ViewBag.ShippingMethods)
+                @foreach (Payment_Methods item in this.ViewBag.PaymentMethods)
                 {
                     <option value="@item.id">@item.method</option>
                 }
@@ -38,35 +40,4 @@
         </form>
     </div>
 </div>
-<div class="right-grid">
-    <div class="order-item-prev">
-        <img src="/images/xbox_new_01.jpg" />
-        <div>
-            <p>Xbox - ten nový</p>
-            <p class="order-item-prev-variant">1TB, černá</p>
-        </div>
-        <span>12 000Kč</span>
-    </div>
-    <div class="order-item-prev">
-        <img src="/images/ps5_01.jpg" />
-        <div>
-            <p>Playstation 5</p>
-            <p class="order-item-prev-variant">835GB, bílá</p>
-        </div>
-        <span>12 500Kč</span>
-    </div>
-    <hr />
-    <div class="subtotal-price">
-        <p class="grid-input-left">Subtotal</p>
-        <p class="grid-input-right">24 500Kč</p>
-    </div>
-    <div class="subtotal-price">
-        <p class="grid-input-left">Shipping</p>
-        <p class="grid-input-right">350 Kč</p>
-    </div>
-    <hr />
-    <div class="subtotal-price">
-        <p class="grid-input-left">Shipping</p>
-        <h3 class="grid-input-right">24 8550Kč</h3>
-    </div>
-</div>
+<vc:right-grid-component></vc:right-grid-component>
